@@ -3,9 +3,1186 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/comments-box.css">
+	<link rel="stylesheet" type="text/css" href="css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="css/search.css">
+	<link rel="stylesheet" type="text/css" href="css/notification.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 	<title>TVD - For You</title>
 </head>
 <body>
+	<!-- Header -->
 
+	<div id="header">
+		<div class="site-logo top-center">TVD</div>
+		<div class="header-search top-center">
+			<div class="search-box">
+				<input type="" name="" placeholder="Search On TVD">
+				<i class="fas fa-search"></i>
+			</div>
+		</div>
+		<div class="header-buttons top-center">
+			<button class="fas fa-search"></button>
+			<a href="upload/index.html" class="header-upload"> <div> <i class="fas fa-plus"></i> <p>Upload</p></div> </a>
+			<a href="signup.html" class="header-signup"> Sign Up</a>
+			<a href="" class="header-login"> Login</a>
+			<div class="top-center">
+				<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="header-user-icon">
+				<div class="shadow-down">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Options -->
+	<div id="options">
+		<div class="setting-logo">
+			<i class="fa-solid fa-cog"></i>
+			<p>Settings</p>
+		</div>
+		<div class="logout">
+			<i class="fa-solid fa-arrow-right-from-bracket"></i>
+			<p>Logout</p>
+		</div>
+	</div>
+	<!-- SideBar -->
+
+	<div class="sideBar">
+		<a href="/TVD (FYP)/"><i class="fas fa-home"></i><p> Home</p></a>
+		<a href=""><i class="fas fa-user-group"></i><p> Following</p></a>
+		<a href="profile/"><i class="fas fa-user"></i><p> Profile</p></a>
+		<b class="search"><i class="fas fa-search"></i><p> Search</p></b>
+		<b class="notification"><i class="fa-regular fa-bell"></i><i class="red"> </i></b>
+
+		<p class="category">Category</p>
+		<p class="accounts">Top Accounts</p>
+		<div class="sug-acc">
+		</div>
+		<p class="hash-text">Trending</p>
+		<div class="trends">
+			<div class="trend">
+				#imrankhan
+			</div>
+			<div class="trend">
+				#westandwithkhan
+			</div>
+			<div class="trend">
+				#khanwasright
+			</div>
+		</div>
+	</div>
+
+	<!-- Conent -->
+		<div id="notifications">
+			<p class="header">
+				Notifications
+			</p>
+			<div>
+			</div>
+		</div>
+		<div id="search">
+			<div class="search-input">
+				<p class="fas fa-search"></p>
+				<input type="text" name="" placeholder="Search">
+			</div>
+			<div class="search-result">
+				<div class="search-profile">
+					<p class="selected">Videos</p>
+					<p>Users</p>
+					<p>Hashtags</p>
+				</div>
+				<div class="search-result-css search-result-video active" data-index='0'>
+					<!-- <div class="single-video">
+						<p class="fas fa-play"></p>
+						<img src="../images/thumbails/638627c407b2c1669736388.png">
+					</div> -->
+					<div class="no-result">
+						<i>🤐</i>
+						<p>No Result Found</p>
+					</div>
+				</div>
+				<div class="search-result-css search-result-user" data-index='1'>
+					<!-- <div class="single-user" data-address="usama_nawaz">
+						<img src="../images/DP/11usama_nawaz.jpg">
+						<p>usama_nawaz</p>
+					</div> -->
+					<div class="no-result">
+						<i>🤐</i>
+						<p>No Result Found</p>
+					</div>
+				</div>
+				<div class="search-result-css search-result-hashtag" data-index='2'>
+					<!-- <div class="single-hashtag" data-address="foryou">
+						<i>#</i>
+						<p>#foryou</p>
+					</div> -->
+					<div class="no-result">
+						<i>🤐</i>
+						<p>No Result Found</p>
+					</div>
+				</div>
+				<div class="no-history">
+					<i class="fa-regular fa-clock"></i>
+					<p>No History</p>
+				</div>
+			</div>
+		</div>
+	<div id="content">
+
+
+
+		<div class="video previous">
+			<div class="video-area">
+
+				<div class="mute">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+
+				<div class="noti-icon">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+				<video autoplay loop muted>
+					<source src="" type="video/mp4">
+				</video>
+			</div>
+			<div class="caption-area">
+				<div class="user-info">
+					<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="top-center">
+					<div class="user-name top-center">
+						<p>
+							Muhammad Shoaib
+						</p>
+						<p>
+							@shoaib.gondal
+						</p>
+					</div>
+					<div class="follow-btn top-center">
+						<button>Follow</button>
+					</div>
+				</div>
+				<div class="video-caption">
+					<p class="time">
+						3 days ago
+					</p>
+				</div>
+				<div class="video-activity">
+					<p class="header">
+						People Mentioned In Video
+					</p>
+					<div class="list">
+						<div class="single-list-element">
+							<img src="https://i.ibb.co/X5bx2mc/Shoaib.png">
+							<div class="name">
+								<p>
+									Muhammad Shoaib
+								</p>
+							</div>
+							<button>
+								Follow 
+								<i>(55K)</i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<!-- <div class="copy-link">
+						<i class="icon fas fa-link">
+							
+						</i>
+						<input type="" name="" disabled value="https://tvd.com/ueu">
+						<button>Copy</button>
+					</div> -->
+					<div class="controls">
+						<span>
+							<p class="fas fa-heart"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-comment"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-share"></p>
+							<!-- <b>122K</b> -->
+						</span>
+						<span>
+							<p class="fas fa-link"></p>
+							<!-- <b>122K</b> -->
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="video cur">
+			<div class="video-area">
+
+				<div class="mute">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+
+				<div class="noti-icon">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+				<video autoplay loop muted>
+					<source src="" type="video/mp4">
+				</video>
+			</div>
+			<div class="caption-area">
+				<div class="user-info">
+					<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="top-center">
+					<div class="user-name top-center">
+						<p>
+							Muhammad Shoaib
+						</p>
+						<p>
+							@shoaib.gondal
+						</p>
+					</div>
+					<div class="follow-btn top-center">
+						<button>Follow</button>
+					</div>
+				</div>
+				<div class="video-caption">
+					<p class="time">
+						3 days ago
+					</p>
+				</div>
+				<div class="video-activity">
+					<p class="header">
+						People Mentioned In Video
+					</p>
+					<div class="list">
+						<div class="signle-list-element">
+							<img src="https://i.ibb.co/X5bx2mc/Shoaib.png">
+							<div class="name">
+								<p>
+									Muhammad Shoaib
+								</p>
+							</div>
+							<button>
+								Follow 
+								<i>(55K)</i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<!-- <div class="copy-link">
+						<i class="icon fas fa-link">
+							
+						</i>
+						<input type="" name="" disabled value="https://tvd.com/ueu">
+						<button>Copy</button>
+					</div> -->
+					<div class="controls">
+						<span>
+							<p class="fas fa-heart"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-comment"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-share"></p>
+							<!-- <b>122K</b> -->
+						</span>
+
+						<span>
+							<p class="fas fa-link"></p>
+							<!-- <b>122K</b> -->
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="video next">
+			<div class="video-area">
+
+				<div class="mute">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+				<div class="noti-icon">
+					<i class="fa-solid fa-volume-xmark"></i>
+				</div>
+				<video autoplay loop muted>
+					<source src="" type="video/mp4">
+				</video>
+			</div>
+			<div class="caption-area">
+				<div class="user-info">
+					<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="top-center">
+					<div class="user-name top-center">
+						<p>
+							Muhammad Shoaib
+						</p>
+						<p>
+							@shoaib.gondal
+						</p>
+					</div>
+					<div class="follow-btn top-center">
+						<button>Follow</button>
+					</div>
+				</div>
+				<div class="video-caption">
+					<p class="time">
+						3 days ago
+					</p>
+				</div>
+				<div class="video-activity">
+					<p class="header">
+						People Mentioned In Video
+					</p>
+					<div class="list">
+						<div class="signle-list-element">
+							<img src="https://i.ibb.co/X5bx2mc/Shoaib.png">
+							<div class="name">
+								<p>
+									Muhammad Shoaib
+								</p>
+							</div>
+							<button>
+								Follow 
+								<i>(55K)</i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="buttons">
+					<!-- <div class="copy-link">
+						<i class="icon fas fa-link">
+							
+						</i>
+						<input type="" name="" disabled value="https://tvd.com/ueu">
+						<button>Copy</button>
+					</div> -->
+					<div class="controls">
+						<span>
+							<p class="fas fa-heart"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-comment"></p>
+							<b>122K</b>
+						</span>
+						<span>
+							<p class="fas fa-share"></p>
+							<!-- <b>122K</b> -->
+						</span>
+						<span>
+							<p class="fas fa-link"></p>
+							<!-- <b>122K</b> -->
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div id="shadow"></div>
+	<div id="login">
+		<div class="Loginheader">
+			<p>Login</p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<div class="body">
+			<form>
+				<input type="text" name="email" placeholder="Email">
+				<input type="password" name="password" placeholder="Password">
+				<button type="submit">Continue <i id="button-shadow"></i><p></p></button>
+			</form>
+			<div>
+				<p class="line"></p>
+				<p class="text">OR</p>
+			</div>
+			<button id="contWithGoogle">Login With Google <i class="fa-brands fa-google"></i></button>
+		</div>
+
+		<div class="warning">
+			<p></p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+	</div>
+	<div id="mail-verification">
+		<div class="body">
+			<p class="check-mail">
+				Check Your <br> Email <i class="fa-solid fa-envelope"></i>
+			</p>
+			<p class="description">
+				We Have Sent A Code To <br> <b>gondalshoaib3333@gmail.com</b>
+			</p>
+			<form>
+				<input type="text" name="code" placeholder="Code From Mail">
+				<button type="submit">Verify <i id="button-shadow"></i><p></p></button>
+				<button class="resend">Resend</button>
+			</form>
+		</div>
+		<div class="warning">
+			<p></p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+	</div>
+
+	<div id="commentsBox">
+		<p class="header">
+			Comments
+		</p>
+		<button class="commentsClose fas fa-xmark"></button>
+		<div class="comments-list">
+		</div>
+		<div class="write-comment">
+			<form>
+				<input type="text" name="comment" id="comment-input-text" placeholder="Type A Comment...." autocomplete="off">
+				<input type="submit" name="add-comment" value="Add">
+			</form>
+		</div>
+	</div>
+
+	<div id="sticky-div">
+		<div class="line">
+			<p>Your Profile Is Incomplete Please Fill Your Info</p>
+		</div>
+		<a href="index.html">Fill Details</a>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="js/essentials.js"></script>
+	<script type="text/javascript">
+		let isMobile = false;
+	</script>
+	<script type="text/javascript" src="js/search.js"></script>
+	<script type="text/javascript" src="js/notifications.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		checkForSession();
+
+
+		// if (screen.width <= 700) location = '/TVD (FYP)/mobile';
+
+		let videoBatch = [],allNextVideos = [];
+		let oldVideos = [];
+		let curVideo = null,nextVideo = null,previousVideo = null,isPlaying = true,isVideoMute = true,videoIndex = 0;
+		let oldVideosCount = 0,globalMail;
+
+		let URLHashtag = new URLSearchParams(window.location.search).get('hashtag');
+		let URLUser = new URLSearchParams(window.location.search).get('user');
+		let startIndex = new URLSearchParams(window.location.search).get('index');
+		let URLVideoID = new URLSearchParams(window.location.search).get('video_id');
+		const loadVideoInNext = () => {
+
+			// Load Video Into Player
+			$('.next .video-area video')[0].src = `videos/` + nextVideo.url;
+			$('.next .video-area video')[0].load();
+			$('.next .video-area video')[0].pause();
+			$('.next .controls span:nth-child(2) b').text(nextVideo.total_comments);
+			$('.next .user-info')[0].setAttribute('data-username',nextVideo.user_name);
+
+			// Add User's DP
+			$('.next .user-info img').attr('src','images/DP/' + nextVideo.dp);
+			$('.next .controls span:first-child b').text(nextVideo.likes);
+
+			//Check If Video Is Liked By User
+			if (nextVideo.isLikedByUser) $('.next .controls span:first-child').addClass('liked');
+			else $('.next .controls span:first-child').removeClass('liked');
+
+			// Add Username & Name
+			$('.next .caption-area .user-name p:first-child').text(nextVideo.name);
+			$('.next .caption-area .user-name p:nth-child(2)').text(`@` + nextVideo.user_name);
+
+			// Check if user is Following the Video Poster
+			if (nextVideo.isFollowedByUser) {
+				$('.next .follow-btn').addClass('following');
+				$('.next .follow-btn button').text('Following');
+			}
+			//Add Video Caption
+			$('.next .caption-area .video-caption').html(`
+				<p class="time">
+					${getTimeDiff(nextVideo.date)} 
+				</p>
+				${nextVideo.caption}
+			`);
+
+			//Load Mentioned People 
+
+			if (nextVideo.mentioned_users.length <= 0) {
+				$('.next .video-activity').hide();
+			} 
+			else {
+				$('.next .video-activity .list').html('');
+				for (let i = 0; i < nextVideo.mentioned_users.length; ++i) {
+					$('.next .video-activity .list').append(
+						`<div class="single-list-element">
+							<a href="profile?user=${nextVideo.mentioned_users[i].username}"><img src="images/DP/${nextVideo.mentioned_users[i].dp}"></a>
+							<div class="name">
+								<p>
+									${nextVideo.mentioned_users[i].name}
+								</p>
+							</div>
+						</div>`
+					);
+				}
+			}
+		}
+		const loadVideoInPrevious = () => {
+			// Load Video
+			$('.previous .video-area video')[0].src = `videos/` + previousVideo.url;
+			$('.previous .video-area video')[0].load();
+			$('.previous .video-area video')[0].pause();
+			$('.previous .controls span:nth-child(2) b').text(previousVideo.total_comments);
+			$('.previous .user-info')[0].setAttribute('data-username',previousVideo.user_name);
+
+			//User DP
+			$('.previous .user-info img').attr('src','images/DP/' + previousVideo.dp);
+			$('.previous .controls span:first-child b').text(previousVideo.likes);
+
+			//Check If Video Is Liked
+			if (previousVideo.isLikedByUser) $('.previous .controls span:first-child').addClass('liked');
+			else $('.previous .controls span:first-child').removeClass('liked');
+
+			//Add UserName & Name
+			$('.previous .caption-area .user-name p:first-child').text(previousVideo.name);
+			$('.previous .caption-area .user-name p:nth-child(2)').text(`@` + previousVideo.user_name);
+
+			// Check If User Is Following
+			if (previousVideo.isFollowedByUser) {
+				$('.previous .follow-btn').addClass('following');
+				$('.previous .follow-btn button').text('Following');
+			}
+			$('.previous .caption-area .video-caption').html(`
+				<p class="time">
+					${getTimeDiff(previousVideo.date)} 
+				</p>
+				${previousVideo.caption}
+			`);
+
+
+			// Load Mentioned Users
+			if (previousVideo.mentioned_users.length <= 0) {
+				$('.previous .video-activity').hide();
+			} 
+			else {
+				$('.previous .video-activity .list').html('');
+				for (let i = 0; i < previousVideo.mentioned_users.length; ++i) {
+					$('.previous .video-activity .list').append(
+						`<div class="single-list-element">
+							<a href="profile?user=${previousVideo.mentioned_users[i].username}"><img src="images/DP/${previousVideo.mentioned_users[i].dp}"></a>
+							<div class="name">
+								<p>
+									${previousVideo.mentioned_users[i].name}
+								</p>
+							</div>
+						</div>`
+					);
+				}
+			}
+		}
+
+		const loadVideoInCur = () => {
+			$('.cur .video-area video')[0].src = `videos/` + curVideo.url;
+			$('.cur .video-area video')[0].load();
+			$('.cur .user-info img').attr('src','images/DP/' + curVideo.dp);
+			$('.cur .controls span:first-child b').text(curVideo.likes);
+			$('.cur .controls span:nth-child(2) b').text(curVideo.total_comments);
+			$('.cur .user-info')[0].setAttribute('data-username',curVideo.user_name);
+
+			//Check If Video Is Liked
+			if (curVideo.isLikedByUser) $('.cur .controls span:first-child').addClass('liked');
+			else $('.cur .controls span:first-child').removeClass('liked');
+
+			//Add Username & Name
+			$('.cur .caption-area .user-name p:first-child').text(curVideo.name);
+			$('.cur .caption-area .user-name p:nth-child(2)').text(`@` + curVideo.user_name);
+
+			//Check If User Is Following The Video Poster
+			if (curVideo.isFollowedByUser) {
+				$('.cur .follow-btn').addClass('following');
+				$('.cur .follow-btn button').text('Following');
+			}
+
+			//Add Video Caption
+			$('.cur .caption-area .video-caption').html(`
+				<p class="time">
+					${getTimeDiff(curVideo.date)} 
+				</p>
+				${curVideo.caption}
+			`);
+
+			if (curVideo.mentioned_users.length <= 0) {
+				$('.cur .video-activity').hide();
+			} 
+			else {
+				$('.cur .video-activity .list').html('');
+				for (let i = 0; i < curVideo.mentioned_users.length; ++i) {
+					$('.cur .video-activity .list').append(
+						`<div class="single-list-element">
+							<a href="profile?user=${curVideo.mentioned_users[i].username}"><img src="images/DP/${curVideo.mentioned_users[i].dp}"></a>
+							<div class="name">
+								<p>
+									${curVideo.mentioned_users[i].name}
+								</p>
+							</div>
+						</div>`
+					);
+				}
+			}
+
+			//Load The Next Video
+			++videoIndex;
+			nextVideo = videoBatch.data[1];
+			loadVideoInNext();
+		}
+
+		// Load Next Videos
+
+		const loadVideoBatch = (isBootUp) => {
+
+			let fetchOBJ = {
+				action : 'fetch-video-batch'
+			};
+			if (URLUser != null) fetchOBJ['user_id'] = URLUser;
+			if (URLHashtag != null) fetchOBJ['hashtag'] = URLHashtag;
+			if (startIndex != null) fetchOBJ['start'] = startIndex;
+			if (URLVideoID != null) fetchOBJ['video_id'] = URLVideoID;
+			$.ajax({
+				url : 'PHP/action.php',
+				method : 'post',
+				data : fetchOBJ,
+				dataType : 'json',
+				success : function (data) {
+					startIndex = data.lastIndex + 1;
+					videoBatch = data;
+					videoIndex = 0;
+					if (isBootUp) {
+						curVideo = videoBatch.data[0];
+						loadVideoInCur();
+					}
+					else {
+						nextVideo = videoBatch.data[0];
+						loadVideoInNext();
+					}
+				}
+			});
+		}
+
+		const playNext = () => {
+			$('.cur').css('top','-100%');
+			$('.next').css('top','0');
+			let lastCur = $('.cur')[0];
+			let lastNext = $('.next')[0];
+			let lastPrevious = $('.previous')[0];
+
+			$('.next video')[0].play()
+			$('.cur video')[0].autoplay = false;
+			$('.cur video')[0].pause();
+			/* Change Styles */
+			lastCur.classList.remove('cur');
+			lastCur.classList.add('previous');
+			lastNext.classList.remove('next');
+			lastNext.classList.add('cur');
+			lastPrevious.classList.remove('previous');
+			lastPrevious.classList.add('next');
+			lastPrevious.style.display = 'none';
+			lastPrevious.style.top = '100%';
+			setTimeout(() => {
+				lastPrevious.style.display = 'block';
+			},1000);
+			if (previousVideo != null) oldVideos.push(previousVideo);
+			previousVideo = curVideo;
+			curVideo = nextVideo;
+			if (allNextVideos.length != 0) {
+				nextVideo = allNextVideos[allNextVideos.length - 1];
+				allNextVideos.pop();
+				loadVideoInNext();
+			}
+			else {
+				if (videoIndex >= 4) {
+					loadVideoBatch(false);
+				}
+				else {
+					++videoIndex;
+					nextVideo = videoBatch.data[videoIndex];
+					loadVideoInNext();
+				}
+			}
+			addListners();
+			isPlaying = true;
+
+			if (isVideoMute) $('.cur video')[0].muted = true;
+			else $('.cur video')[0].muted = false;
+			/* Change Styles */
+		}
+
+		const addListners = () => {
+			$('.cur .video-area .noti-icon').hide();
+			$('.cur .video-area video').off('click')
+			$('.cur .video-area video').on('click', () => {
+				playPauseEventListner();
+			});
+			$('.cur .video-area .noti-icon').off('click')
+			$('.cur .video-area .noti-icon').on('click', () => {
+				playPauseEventListner();
+			});
+
+			$('.mute').off('click')
+		    $('.mute').on('click', () => {
+		    	if (isVideoMute) {
+		    		$('.mute i').removeClass('fa-volume-xmark');
+		    		$('.mute i').addClass('fa-volume-high');
+
+					$('.video-area .noti-icon').show(100);
+					$('.video-area .noti-icon > i').attr('class','');
+					$('.video-area .noti-icon > i').attr('class','fas fa-volume-high');
+					setTimeout(() => {
+						$('.video-area .noti-icon').hide(100);
+					},1000)
+		    		$(".cur video")[0].muted = false;
+		    		isVideoMute = false;
+		    	}
+		    	else {
+		    		$('.mute i').addClass('fa-volume-xmark')
+		    		$('.mute i').removeClass('fa-volume-high')
+
+		    		$('.video-area .noti-icon').show(100);
+					$('.video-area .noti-icon > i').attr('class','');
+					$('.video-area .noti-icon > i').attr('class','fas fa-volume-xmark');
+		    		setTimeout(() => {
+						$('.video-area .noti-icon').hide(100);
+					},1000)
+		    		$(".cur video")[0].muted = true;
+		    		isVideoMute = true;
+		    	}
+		    })
+		    $('.cur .user-info .user-name').off('click')
+		    $('.cur .user-info .user-name').on('click', () => {
+		    	location = '/TVD (FYP)/profile?user=' + $('.cur .user-info').data('username');
+		    })
+		    $('.cur .user-info img').off('click')
+		    $('.cur .user-info img').on('click', () => {
+		    	location = '/TVD (FYP)/profile?user=' + $('.cur .user-info').data('username');
+		    })
+		    $('.follow-btn').off('click');
+		    $('.follow-btn').on('click', () => {
+		    	if (curVideo.isFollowedByUser) {
+		    		$.ajax({
+		    			url : 'PHP/action.php',
+		    			method : 'post',
+		    			dataType : 'json',
+		    			data : {action : 'follow-unfollow', current : 'followed', user_id : curVideo.user_id},
+		    			success : function (data) {
+		    				if (!data.isLoggedIn) {
+								$('#login').show(300);
+								$('#shadow').show();
+		    				}
+		    				else {
+					    		curVideo.isFollowedByUser = false;
+					    		$('.follow-btn').removeClass('following');
+					    		$('.follow-btn button').text('Follow');
+		    				}
+		    			}
+		    		});
+		    	}
+		    	else {
+		    		$.ajax({
+		    			url : 'PHP/action.php',
+		    			method : 'post',
+		    			dataType : 'json',
+		    			data : {action : 'follow-unfollow', current : 'unfollowed', user_id : curVideo.user_id},
+		    			success : function (data) {
+		    				if (!data.isLoggedIn) {
+								$('#login').show(300);
+								$('#shadow').show();
+		    				}
+		    				else {
+					    		curVideo.isFollowedByUser = true;
+					    		$('.follow-btn').addClass('following');
+					    		$('.follow-btn button').text('Following');
+		    				}
+		    			}
+		    		})
+		    	}
+		    })
+		}
+
+		const playPrevious = () => {
+			$('.cur').css('top','100%');
+			$('.previous').css('top','0');
+			let lastCur = $('.cur')[0];
+			let lastNext = $('.next')[0];
+			let lastPrevious = $('.previous')[0];
+
+			$('.previous video')[0].play()
+			$('.cur video')[0].autoplay = false;
+			$('.cur video')[0].pause();
+
+			lastCur.classList.remove('cur');
+			lastCur.classList.add('next');
+			lastNext.classList.remove('next');
+			lastNext.classList.add('previous');
+			lastPrevious.classList.remove('previous');
+			lastPrevious.classList.add('cur');
+			lastNext.style.display = 'none';
+			lastNext.style.top = '-100%';
+			setTimeout(() => {
+				lastNext.style.display = 'block';
+			},1000);
+
+			if (nextVideo != null) allNextVideos.push(nextVideo);
+
+			nextVideo = curVideo;
+			curVideo = previousVideo;
+			if (oldVideos.length != 0) {
+				previousVideo = oldVideos[oldVideos.length - 1];
+				oldVideos.pop();
+			}
+			else {
+				previousVideo = null;
+			}
+			if (previousVideo != null) loadVideoInPrevious();
+			addListners();
+			isPlaying = true;
+		}
+
+		const playPauseEventListner = () => {
+			console.log(isPlaying);
+			if (isPlaying) {
+					$('.cur .video-area video')[0].pause();
+					$('.video-area .noti-icon').show(100);
+					$('.video-area .noti-icon > i').attr('class','');
+					$('.video-area .noti-icon > i').attr('class','fas fa-play');
+					isPlaying = false;
+				}
+				else {
+					$('.cur .video-area video')[0].play();
+					$('.video-area .noti-icon').hide(100);
+					isPlaying = true;
+				}
+		}
+
+		const bootUp = () => {
+			loadVideoBatch(true);
+			addListners();
+			// $('.cur .video-area video')[0].muted = false;
+		}
+
+		bootUp()
+
+		// $('.next .video-area video').on('click', () => {
+		// 	if (isPlaying) {
+		// 		$('.next .video-area video')[0].pause();
+		// 		isPlaying = false;
+		// 	}
+		// 	else {
+		// 		$('.next .video-area video')[0].play();
+		// 		isPlaying = true;
+		// 	}
+		// })
+		// $('.previous .video-area video').on('click', () => {
+		// 	if (isPlaying) {
+		// 		$('.previous .video-area video')[0].pause();
+		// 		isPlaying = false;
+		// 	}
+		// 	else {
+		// 		$('.previous .video-area video')[0].play();
+		// 		isPlaying = true;
+		// 	}
+		// })
+
+		$('#commentsBox .commentsClose').on('click', () => {
+			$('#commentsBox').hide();
+			$('#shadow').hide();
+		});
+		$('p.fas.fa-comment').on('click', () => {
+			$('#commentsBox').show();
+			$('#shadow').show();
+
+			$('#commentsBox .comments-list').html('');
+
+			$.ajax({
+				url : 'PHP/action.php',
+				data : {
+					'action' : 'get-comments',
+					post_id : curVideo.post_id
+				},
+				dataType : 'json',
+				method : 'post',
+				success : function (data) {
+					for (let i = 0; i < data.data.length; ++i) {
+						$('#commentsBox .comments-list').append(
+							`
+								<div class="single-comment">
+									<div class="single-comment-header">
+										<img src="images/DP/${data.data[i].dp}">
+										<b>${data.data[i].name}</b>
+										<p>${getTimeDiff(data.data[i].time_added)}</p>
+									</div>
+									<div class="single-comment-body">
+										<p class="comment-text">
+											${data.data[i].comment_text}
+										</p>
+									</div>
+								</div>
+							`
+						);
+					}
+
+				}
+			})
+
+		})
+
+		$(document).on('keyup',(event) => {
+			if (event.keyCode == 40) {
+				playNext();
+			}
+		})
+		$(document).on('keyup',(event) => {
+			if (event.keyCode == 38 && previousVideo != null) {
+				playPrevious();
+			}
+		})
+		$("#content").on('scroll', (e) => {
+			console.log("Helo");
+		})
+
+		$(document).ready(() => {
+			let options = false;
+			// Click Events
+
+			// 01 - Hide Login Popup
+			$('#login .Loginheader .fa-xmark').on('click',() => {
+				$('#login').hide(300);
+				$('#shadow').hide(300);
+			})
+
+			// 02 - Show Login Popup
+			$("#header .header-login").on("click",(event) => {
+				event.preventDefault()
+				$('#login').show(300);
+				$('#shadow').show();
+			})
+
+			// 05 - Hide Warning
+			$('.warning i.fa-xmark').on('click',() => {
+				$('.warning').hide(200)
+			})
+
+			// 06 - Show Options
+			$('.shadow-down').on('click',() => {
+				if (!options) {
+					options = true;
+					$('#options').show();
+					$('.shadow-down').show();
+					$('.shadow-down i').removeClass('fa-caret-down');
+					$('.shadow-down i').addClass('fa-caret-up');
+				}
+				else {
+					options = false;
+					$('#options').hide();
+					$('.shadow-down i').removeClass('fa-caret-up');
+					$('.shadow-down i').addClass('fa-caret-down');
+				}
+			});
+
+			$('#options .logout').on('click', () => {
+				$.ajax({
+					url : 'PHP/logout.php',
+					method : 'post',
+					dataType : 'json',
+					success : function (data) {
+						if (data.success) {
+							location.reload()
+							console.log("HII")
+						}
+					}
+				})
+			});
+
+			// 06 - Sign Up Form Submit
+
+			$('.fa-heart').on('click', () => {
+				if (!isLogin) {
+					$('#login').show(300);
+					$('#shadow').show();
+				}
+				else {
+					if (curVideo.isLikedByUser) {
+						$('.cur .fa-heart').parent().removeClass('liked');
+						$('.cur .fa-heart + b').text(parseInt($('.cur .fa-heart + b')[0].textContent) - 1);
+						$.ajax({
+							url : 'PHP/action.php',
+							data : {
+								post_id : curVideo.post_id,
+								action : 'unlike-video'
+							},
+							method : 'post',
+							dataType : 'json',success : function (data) {
+								
+							}
+						})
+						curVideo.isLikedByUser = false;
+					}
+					else {
+						$('.cur .fa-heart').parent().addClass('liked');
+						$('.cur .fa-heart + b').text(parseInt($('.cur .fa-heart + b')[0].textContent) + 1);
+						$.ajax({
+							url : 'PHP/action.php',
+							data : {
+								post_id : curVideo.post_id,
+								action : 'like-video'
+							},
+							method : 'post',
+							dataType : 'json',success : function (data) {
+								
+							}
+						})
+						curVideo.isLikedByUser = true;
+					}
+				}
+			})
+
+
+			$('#mail-verification button.resend').on('click',(event) => {
+				event.preventDefault()
+				// Resend Ajax Request
+				console.log(globalMail)
+				$.ajax({
+					url : 'PHP/action.php',
+					method : 'post',
+					dataType : 'json',
+					data : {
+						action : 'resend-code',
+						mail : globalMail
+					},
+					success : function(data) {
+						if (data.success) {
+							$('#mail-verification button.resend').attr('disabled','');
+							$('#mail-verification button.resend').text('Resent!');
+							$('#mail-verification button.resend').css('color','green');
+						}
+					}
+				})
+
+			})
+
+			$('#mail-verification form').on('submit',(event) => {
+				event.preventDefault()
+				// Resend Ajax Request
+
+				$.ajax({
+					url : 'PHP/action.php',
+					method : 'post',
+					dataType : 'json',
+					data : {
+						action : 'verify-code',
+						mail : globalMail,
+						code : $('#mail-verification form input[name="code"]').val()
+					},
+					success : function(data) {
+						if (data.success) {
+							if (data.success && data.verified) {
+								$('#mail-verification').hide();
+								$('#shadow').hide();
+								location.reload();
+							}
+							else if (!data.verified) {
+								$('#mail-verification .warning').show();
+								$('#mail-verification .warning p').html('<b> Code Is Incorrect Try Again</b>')
+								$('#mail-verification .warning').css('top','158px')
+								$('#mail-verification form button').removeClass('getting')
+							}
+						}
+					}
+				})
+
+			})
+
+			$("#login form").on("submit", () => {
+
+				event.preventDefault()
+				$('#login .body form button').addClass('getting');
+				console.log($('#login .body form input[name="email"]').val());
+				$('#login .body form input[name="email"]').attr('disabled','disabled');
+				$.ajax({
+					url : 'PHP/action.php',
+					method : 'post',
+					dataType : 'json',
+					data : {
+						action : 'user-login',
+						mail : $("#login form input[name='email']").val(),
+						password : $("#login form input[name='password']").val()
+					},
+					success : function (data) {
+
+						$('#login form input[name="email"]').removeAttr('disabled');
+						$('#login form button').removeClass('getting');
+						if (!data.error && data.session) {
+							$('#login').hide()
+							$('#mail-verification').show();
+							$('#mail-verification p.description b').text($("#login form input[name='email']").val());
+						}
+						else if (!data.error && data.password) {
+							$('#login .warning').show();
+							$('#login .warning p').html('<b> Email Is Not registered</b>')
+							$('#login .warning').css('top','108px')
+						}
+						else if (!data.error && data.email) {
+							$('#login .warning').show();
+							$('#login .warning p').html('<b> Incorrect Password</b>')
+							$('#login .warning').css('top','108px')
+						}
+					}
+				})
+			})
+
+			$('#commentsBox .write-comment').on('submit', (event) => {
+				event.preventDefault();
+				let commentText = $('#comment-input-text').val();
+				if (isLogin && commentText.length > 0) {
+					// console.log(curVideo.post_id);
+					$('#comment-input-text').val('');
+					$.ajax({
+						url : 'PHP/action.php',
+						data : {
+							action : 'add-comment',
+							videoid : curVideo.post_id,
+							commenttext : commentText
+						},
+						dataType :'json',
+						method : 'post',
+						success : (data) => {
+							$('#commentsBox .comments-list').append(`
+								<div class="single-comment">
+									<div class="single-comment-header">
+										<img src="images/DP/${curUser.dp}">
+										<b>${curUser.name}</b>
+										<p>Today</p>
+									</div>
+									<div class="single-comment-body">
+										<p class="comment-text">
+											${commentText}
+										</p>
+									</div>
+								</div>
+							`);
+						}
+					})
+				}
+				else if (!isLogin) {
+					$('#login').show(300);
+					$('#shadow').show();
+				}
+			})
+
+			// Click Events End
+		})
+	</script>
 </body>
 </html>
