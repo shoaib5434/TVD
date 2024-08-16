@@ -1,0 +1,260 @@
+@keyframes Spinner {
+	from {
+		width: 10px;
+		height: 10px;
+	}
+	to {
+		width: 35px;
+		height: 35px;
+	}
+}
+#shadow {
+	width: 100%;
+	height: 100%;
+	display: block;
+	position: fixed;
+	z-index: 100;
+	background-color: #00000082;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+}
+#login,#signup,#mail-verification,#user-info,#sticky-div {
+	position: fixed;
+	width: 300px;
+	height: 320px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 101;
+	border-radius: 5px;
+	background-color: white;
+	display: none;
+}
+#login .Loginheader,#signup .Loginheader,#mail-verification .Loginheader,#user-info .Loginheader {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1ps solid black;
+}
+.Loginheader i {
+	float: right;
+	height: 100%;
+	line-height: 50px;
+	display: inline-block;
+	font-size: 30px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+.Loginheader p {
+	display: inline-block;
+	line-height: 50px;
+	padding-left: 5px;
+	text-transform: uppercase;
+	color: #001bb1;
+	font-size: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.Loginheader i:hover {
+	color: red;
+}
+#login .body,#signup .body ,#mail-verification .body,#user-info .body {
+	height: calc(100% - 50px);
+}
+.body > * {
+	left: 50%;
+	transform: translateX(-50%);
+}
+.body form input,.body form button {
+	width: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 40px;
+	display: block;
+	border: 2px solid black;
+	padding: 0 10px;
+	margin: 10px 0px;
+	font-size: 15px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.body form input[type="text"]:hover {
+	outline: none;
+}
+.body form button {
+	color: white;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	background-color: #c50043;
+}
+form button i#button-shadow {
+	position: absolute;
+	left: 0 !important;
+	top: 0;
+	border-radius: 5px;
+	transform: unset;
+	width: 100%;
+	display: none;
+	height: 100%;
+	background-color: #7a7a7a87;
+}
+form button p {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	border-radius: 50%;
+	background-color: white;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-left-color: white;
+	animation-name: Spinner;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	display: none;
+}
+form button.getting {
+	pointer-events: none;
+}
+form button.getting i {
+	display: inline-block !important;
+}
+form button.getting p {
+	display: inline-block;
+}
+.body p.line {
+	width: 100%;
+	height: 2px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: #a7a7a7;
+}
+.body > div {
+	width: 80%;
+	height: 30px;
+	margin: 5px 0px;
+}
+.body p.text {
+	background-color: white;
+	padding: 0 10px;
+	width: fit-content;
+	height: 30px;
+	line-height: 30px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.body button#contWithGoogle {
+	width: 80%;
+	line-height: 40px;
+	height: 40px;
+	color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	font-size: 16px;
+	cursor: pointer;
+	margin-top: 10px;
+	background-color: #000000;
+}
+.body button#contWithGoogle > * {
+	display: inline-block;
+	left: unset;
+	transform: unset;
+}
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.body #loader {
+	background-color: transparent;
+	border: 5px solid transparent;
+	border-left-color: black;
+	border-top-color: black;
+	border-bottom-color: black;
+	height: 50px;
+	border-radius: 50%;
+	width: 50px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.body #body-shadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	right: 0;
+	bottom: 0;
+	transform: unset;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 15;
+}
+#signup {
+	height: 380px;
+}
+#signup .warning,#mail-verification .warning,#user-info .warning,#login .warning {
+	width: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 10px;
+	border-radius: 5px;
+	top: 102px;
+	line-height: 20px;
+	background-color: #d50000;
+	color: white;
+	display: none;
+	font-size: 15px;
+	position: absolute;
+}
+.warning i {
+	right: 10px;
+	top: 5px;
+	display: inline-block;
+	position: absolute;
+	cursor: pointer;
+	color: white;
+}
+#mail-verification > .body,#user-info > .body {
+	top: 50%;
+	left: 50%;
+	height: calc(100% - 70px);
+	transform: translate(-50%,-50%);
+}
+#mail-verification p.check-mail,#user-info p.check-mail {
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+#mail-verification .resend {
+	background-color: transparent;
+	border: 2px solid #0d29e5;
+	color: #007ab5;
+}
+#mail-verification .description {
+	line-height: 20px;
+	margin-bottom: 15px;
+	width: 100%;
+	text-align: center;
+
+}
+#mail-verification {
+	height: 330px;
+}

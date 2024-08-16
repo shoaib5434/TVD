@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Mouse+Memoirs&display=swap');
+:root {
+	--primaryFont : 'ABeeZee';
+	--secandoryFont : 'Mouse Memoirs';
+}
+* {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: var(--primaryFont);
+}
+body {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+}
+#main {
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 100%;
+	/*max-width: 500px;*/
+}
+#main > * {
+	width: 100%;
+}
+#main > #content-area {
+	height: calc(100% - 40px);
+	background: black;
+	overflow: hidden;
+}
+#content-area video {
+	max-width: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	max-height: 100%;
+}
+#content-area > div.video-elems {
+	width: 100%;
+	position: absolute;
+	transition: .5s all ease-in-out;
+	height: 100%;
+	display: block;
+}
+#content-area .post-details {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+.post-details > .user-details {
+	width: 100%;
+	height: 30px;
+}
+.post-details > .user-details > * {
+	display: inline-block;
+	margin-left: 10px;
+	float: left;
+}
+.post-details > .user-details > img {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background: black;
+}
+.post-details > .user-details > a {
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	text-shadow: 0px 0px 8px #110704;
+	font-weight: bold;
+	font-size: 13px;
+	text-decoration: none;
+}
+.post-details > .post-data {
+	color: white;
+	text-shadow: 0px 0px 2px #110704;
+	padding: 5px;
+	font-size: 13px;
+}
+.post-details > .post-data a {
+	text-decoration: none;
+	text-shadow: 0px 0px 2px #110704;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.post-details > .post-data a.see-more,.post-details > .post-data a.see-less {
+	color: #cecece;
+}
+.post-buttons {
+	width: 50px;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	right: 0;
+	height: 200px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.post-buttons > div {
+	width: 100%;
+	color: white;
+	display: block;
+	height: calc(100% / 3);
+}
+.post-buttons > div > p {
+	top: 50%;
+	left: 50%;
+	font-size: 30px;
+	transform: translate(-50%,-50%);
+	cursor: pointer;
+}
+.post-buttons > div > p.liked {
+	color: red;
+}
+.post-buttons > div > i {
+	width: 100%;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	font-style: normal;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	font-size: 14px;
+}
+#search-button {
+	position: absolute;
+	left: 6px;
+	top: 12px;
+	color: white;
+	font-size: 18px;
+}
+.mute {
+	position: absolute;
+	background: black;
+	height: 30px;
+	width: 30px;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+	right: 5px;
+	top: 5px;
+	color: white;
+	border-radius: 50%;
+}
+
+#content-area .noti-icon {
+	background-color: #2e2e2ec2;
+	width: 100px;
+	height: 100px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	z-index: 99;
+	cursor: pointer;
+	display: none;
+	border-radius: 50%;
+}
+#content-area .noti-icon > i {
+	font-weight: bold;
+	font-size: 20px;
+	height: 100%;
+	width: 100%;
+	line-height: 100px;
+	text-align: center;
+	color: white;
+	font-size: 30px;
+}
+.next,.prev {
+	display: none;
+}

@@ -1,0 +1,833 @@
+body {
+	background: rgb(248, 248 ,248);
+	height: 100%;
+}
+#header {
+	position: fixed;
+	z-index: 99;
+}
+#header a.header-upload {
+	background: #f1f1f1 !important;
+}
+#content {
+	min-height: 625px;
+	display: inline-block;
+	width: 95%;
+	box-sizing: border-box;
+	left: 50%;
+	z-index: 98;
+	transform: translateX(-50%);
+	margin-top: 70px;
+	background: white;
+	box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+	border-radius: 15px;
+}
+#content > * {
+	left: 50%;
+	transform: translateX(-50%);
+}
+#content > #right-part {
+	width: calc(100% - 320px);
+	float: left;
+	display: inline-block;
+	left: unset;
+	transform: unset;
+}
+#content .upload,#content #preview {
+	width: 300px;
+	height: 533px;
+	float: left;
+	border: 3px dashed #b1b1b1;
+	left: unset;
+	display: inline-block;
+	transform: unset;
+	cursor: pointer;
+	margin: 20px 10px;
+	transition: all 0.5s ease-in-out;
+}
+#content .upload .cover {
+	display: none;
+}
+#content .upload.dragedFile:before {
+	content: attr(data-before);
+	background: #ffffffdb;
+	left: 0;
+	text-align: center;
+	line-height: 530px;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9;
+	font-size: 20px;
+	font-weight: bold;
+	color: #6033af;
+}
+/*	background: #fffffff0;
+	position: absolute;
+	left: 0;
+	display: block;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+}
+#content .upload.dragedFile div.cover p {
+	width: 65%;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	line-height: 40px;
+	transform: translate(-50%);
+}*/
+#content .upload.dragedFile > p.icon {
+	animation: uploadBtnAnimation 1s;
+	animation-iteration-count: infinite;
+}
+#content .upload:hover {
+	background: #ebebeb;
+	border-color: red;
+}
+#content .upload > p.icon {
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 50px;
+	top: 10px;
+	display: block;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+	z-index: 10;
+}
+#content > #left-part {
+	height: 100%;
+	display: inline-block;
+	width: fit-content;
+	left: unset;
+	transform: unset;
+	float: left;
+}
+#content .upload > p.smallText {
+	width: 80%;
+	display: block;
+	color: #5f5f5f;
+	font-weight: bold;
+	text-align: center;
+	top: 20px;
+	left: 50%;
+	font-size: 18px;
+	line-height: 30px;
+	transform: translateX(-50%);
+}
+#content .upload > .instructions {
+	width: 100%;
+	margin-top: 50px;
+}
+#content .upload > .instructions > p {
+	width: 100%;
+	text-align: center;
+	line-height: 40px;
+	letter-spacing: 0px;
+	font-size: 15px;
+	/*font-weight: bold;*/
+	color: #939393;
+}
+#content .upload > button {
+	width: 80%;
+	height: 40px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	border: none;
+	background: red;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+}
+#content > #right-part > .caption {
+	width: 80%;
+	min-height: 220px;
+	margin: 20px 0px;
+	border-radius: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#content > #right-part > .caption p {
+	width: 100%;
+	padding: 5px;
+	font-size: 16px;
+	line-height: 25px;
+	color: black;
+}
+#content > #right-part > .caption p.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+#content > #right-part > .caption ul {
+	margin: 10px 0px;
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: rgb(0 0 0 / 10%) 0px 2px 11px;
+}
+#content > #right-part > .caption ul li {
+	text-decoration: none;
+	line-height: 30px;
+	list-style: none;
+}
+#content > #right-part > .caption ul li b {
+	font-size: 17px;
+}
+#content > #right-part > .caption textarea {
+	width: 100%;
+	height: 55px;
+	border: 2px solid #c1c1c1;
+	font-size: 15px;
+	padding: 0px 10px;
+	padding-top: 10px;
+	line-height: 25px;
+	border-radius: 5px;
+}
+#content > #right-part > .caption input.empty {
+	border-color: red;
+}
+#content > #right-part > .caption textarea:focus {
+	outline: none;
+}
+#content .tags,#content .privacy-shortcuts,#content .thumbail-preview {
+	width: 80%;
+	left: 50%;
+	transform: translateX(-50%);
+	max-height: 200px;
+}
+#content .tags > .title > p {
+	display: inline-block;
+}
+#content .tags > .title > p:first-child {
+	font-size: 18px;
+	font-weight: bold;
+}
+#content .tags > .title > p:last-child {
+	margin-left: 5px;
+	color: #bdbdbd;
+}
+#content .tags > .title > p#tags-red-alert.red {
+	color: red;
+}
+.tags > .selected-tags {
+	width: 100%;
+	height: fit-content;
+	margin-top: 20px;
+}
+.selected-tags div {
+	height: 30px;
+	line-height: 30px;
+	border-radius: 5px;
+	width: fit-content;
+	background: #f9f9f9;
+	float: left;
+	display: inline-block;
+	padding: 0px 0px 0px 10px;
+	margin: 5px 0px 20px 5px;
+	cursor: pointer;
+	transition: 0.5s all ease-in-out;
+}
+.selected-tags div > p {
+	float: left;
+}
+.selected-tags div > i {
+	color: white;
+	font-size: 12px;
+	margin: 0px 5px 0px 10px;
+	height: 20px;
+	top: 50%;
+	float: left;
+	text-align: center;
+	line-height: 20px;
+	transform: translateY(-50%);
+	width: 20px;
+	background: black;
+	border-radius: 50%;
+}
+.selected-tags div > * {
+	display: inline-block;
+}
+.tags > .tags-box {
+	width: 100%;
+	height: 50px;
+	border: none;
+	border-radius: 5px;
+	background: white;
+	float: left;
+	display: block;
+	box-shadow: rgb(0 0 0 / 12%) 0px 2px 11px;
+}
+.tags > .tags-box.less {
+	border: 1px solid red;
+}
+.tags > .tags-box form {
+	width: 100%;
+	height: 100%;
+}
+.tags > .tags-box input[type="text"] {
+	width: 80%;
+	border: none;
+	border-radius: inherit;
+	height: 100%;
+	padding: 0px 10px;
+	float: left;
+	font-size: 16px;
+	display: inline-block;
+}
+.tags > .tags-box input[type="submit"] {
+	width: 18%;
+	float: left;
+	height: 70%;
+	cursor: pointer;
+	top: 50%;
+	border: none;
+	transform: translateY(-50%);
+	background: red;
+	font-size: 15px;
+	font-weight: bold;
+	color: white;
+	display: inline-block;
+}
+.tags input:focus {
+	outline: none;
+}
+
+#content > #right-part >  button {
+	width: 200px;
+	height: 40px;
+	font-weight: bold;
+	color: white;
+	margin: 30px 0px 0px 0px;
+	border: none;
+	float: left;
+	background: #e50000;
+	font-size: 15px;
+	cursor: pointer;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#content > #right-part >  button.posting {
+	pointer-events: none;
+	background: #727272;
+}
+#content > #right-part >  button.posting::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #ffffffd1;
+	cursor: not-allowed;
+	z-index: 40;
+}
+#content > #right-part >  button.disabled {
+	color: #606060;
+	background: #b1b1b1;
+	cursor: not-allowed;
+}
+#content > #right-part > .privacy-shortcuts {
+	float: left;
+	margin-top: 30px;
+}
+#content > #right-part > .privacy-shortcuts p.title {
+	font-weight: bold;
+	font-size: 18px;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode {
+	width: 100%;
+	float: left;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode > p {
+	margin: 10px 0px;
+	font-weight: bold;
+	font-size: 15px;
+	width: 100%;
+	float: left;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode > select {
+	height: 36px;
+	width: 300px;
+	padding: 0px 10px;
+	float: left;
+	font-weight: bold;
+	/*appearance : none;*/
+	outline: none;
+	border: 1px solid rgba(22, 24, 35, 0.12);
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode > select::after {
+	padding: 0px 10px;
+	content: '\25BC';
+	font-weight: bold;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode > select > option {
+	width: 100%;
+	background: #e9e9e9;
+	height: 36px;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode.others > * {
+	float: left;
+	display: block;
+	width: 100%;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode.others > div > * {
+	display: inline-block;
+	float: left;
+	margin: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	font-weight: bold;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode.others > div > input {
+	margin-left: 10px;
+	border-radius: 0px;
+	border: 1px solid black;
+	height: 30px;
+	width: 17px;
+	background-color: red;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode.others > div {
+	margin: 0px 0px;
+	height: 30px;
+}
+#content > #right-part > .privacy-shortcuts > div.select-view-mode.others > * {
+}
+#content > #right-part > .thumbail-preview {
+	padding-bottom: 20px;
+	box-sizing: content-box;
+}
+#content > #right-part > .thumbail-preview .title p {
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+#content > #right-part > .thumbail-preview img {
+	width: 100px;
+	height: 177px;
+	border-radius: 5px;
+	background: black;
+}
+
+#content #preview {
+	display: none;
+	border-style: solid;
+	background: black;
+}
+#content .upload.empty {
+	border-color: red;
+}
+#content #preview > video {
+	max-height: 100%;
+	max-width: 100%;
+	position: relative;
+	left: 50%;
+	cursor: auto;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+#content #preview > #bgMusic,#content #preview > .mute {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	height: 40px;
+	width: 40px;
+	background: white;
+	border-radius: 5px;
+}
+#content #preview > #bgMusic > i,#content #preview > .mute > i {
+	font-weight: bold;
+	font-size: 20px;
+	height: 100%;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+}
+#content #preview > .buttons {
+	display: block;
+	position: absolute;
+	width: 100%;
+	bottom: 10px;
+	left: 0;
+}
+#content #preview > .mute {
+	right: unset;
+	left: 10px;
+	border-radius: 50%;
+	background: black;
+}
+#content #preview > .mute > i {
+	color: white;
+	font-size: 15px;
+}
+#content #preview > .buttons > button {
+	width: 200px;
+	height: 40px;
+	background: #00a50d;
+	left: 50%;
+	transform: translateX(-50%);
+	border: none;
+	text-align: center;
+	margin-bottom: 5px;
+	cursor: pointer;
+	line-height: 40px;
+	transition: 1s all ease-in-out;
+}
+#content #preview > .buttons > button:hover {
+	background: #00810a;
+}
+#content #preview > .buttons > button > * {
+	display: inline-block;
+	color: white;
+	font-weight: bold;
+}
+div#crop-box-shadow {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 101;
+	background: #000000c7;
+	display: none;
+}
+div#crop-box,
+div#adjust-box,
+div#music-box {
+	position: absolute;
+	top: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 600px;
+	height: 560px;
+	background: white;
+	z-index: 102;
+	border-radius: 5px;
+	border: 1px solid black;
+	display: none;
+}
+div#crop-box > div.crop-box-header,
+div#adjust-box > div.adjust-box-header,
+div#music-box > div.music-box-header {
+	height: 60px;
+}
+div#crop-box > div.crop-box-header > p,
+div#adjust-box > div.adjust-box-header > p,
+div#music-box > div.music-box-header > p {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+}
+div#crop-box > div.crop-box-content,
+div#adjust-box > div.adjust-box-content,
+div#music-box > div.music-box-content {
+	height: calc(100% - 120px);
+}
+div#crop-box > div.crop-box-content > div,
+div#adjust-box > div.adjust-box-content > div {
+	width: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	height: 400px;
+}
+div#crop-box > div.crop-box-content > div > #croper,
+div#adjust-box > div.adjust-box-content > div > #croper {
+	box-sizing: border-box;
+	border: 2px solid black;
+	cursor: move;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+div#crop-box > div.crop-box-content > div > #leftShadow {
+	position: absolute;
+	width: 0;
+	background: #000000b3;
+	left: 0;
+}
+div#crop-box > div.crop-box-content > div > #rightShadow {
+	position: absolute;
+	right: 0;
+	background: #000000b3;
+}
+div#crop-box > div.crop-box-content > div > video,
+div#adjust-box > div.adjust-box-content > div > video {
+	max-height: 100%;
+	max-width: 100%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+div#crop-box > div.crop-box-buttons,
+div#adjust-box > div.adjust-box-buttons,
+div#music-box > div.music-box-buttons {
+	height: 60px;
+}
+div#crop-box > div.crop-box-buttons > div,
+div#adjust-box > div.adjust-box-buttons > div,
+div#music-box > div.music-box-buttons > div {
+	width: fit-content;
+	float: right;
+	margin-right: 10px;
+	height: 100%;
+}
+div#crop-box > div.crop-box-buttons > div > button,
+div#adjust-box > div.adjust-box-buttons > div > button,
+div#music-box > div.music-box-buttons > button {
+	width: 100px;
+	height: 40px;
+	margin-left: 10px;
+	border: none;
+	top: 50%;
+	font-size: 14px;
+	color: white;
+	cursor: pointer;
+	transition: .5s all ease-in-out;
+	font-weight: bold;
+	transform: translateY(-50%);
+}
+div#crop-box > div.crop-box-buttons > div > button.done,
+div#adjust-box > div.adjust-box-buttons > div > button.done {
+	background: red;
+}
+
+div#crop-box > div.crop-box-buttons > div > button.done.disabled,
+div#adjust-box > div.adjust-box-buttons > div > button.done.disabled {
+	pointer-events: none;
+	z-index: 9;
+}
+div#crop-box > div.crop-box-buttons > div > button.done.disabled::before,
+div#adjust-box > div.adjust-box-buttons > div > button.done.disabled::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: #ffffffe0;
+	z-index: 10;
+	display: block;
+	pointer-events: all;
+	position: absolute;
+	cursor: not-allowed;
+}
+div#crop-box > div.crop-box-buttons > div > button.done:hover,
+div#adjust-box > div.adjust-box-buttons > div > button.done:hover {
+	background: #db0000;
+}
+div#crop-box > div.crop-box-buttons > div > button.cancel,
+div#adjust-box > div.adjust-box-buttons > div > button.cancel {
+	background: #ababab;
+}
+div#crop-box > div.crop-box-buttons > div > button.cancel:hover,
+div#adjust-box > div.adjust-box-buttons > div > button.cancel:hover {
+	background: #8d8d8d;
+}
+div#shadow,
+div#adjust-shadow,
+div#upload-shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	background: #ffffffba;
+	display: none;
+	z-index: 99;
+}
+.loader {
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.wheel {
+	width: 30px;
+	height: 30px;
+	box-sizing: border-box;
+	border-radius: 50%;
+	background: transparent;
+	border: 5px solid black;
+	border-top-color: transparent;
+	animation: Spin 1s;
+	animation-iteration-count: infinite;
+}
+div#shadow.active,
+div#adjust-shadow.active,
+div#upload-shadow.active {
+	display: block;
+}
+
+div#adjust-box {
+	display: none;
+	height: 650px;
+}
+div#adjust-box > .adjust-box-content > div.options p.title {
+	width: 100%;
+	line-height: 30px;
+	font-weight: bold;
+	font-size: 17px;
+}
+div#adjust-box > .adjust-box-content > div.options {
+	height: fit-content !important;
+}
+div#adjust-box > .adjust-box-content > div.options > div {
+	width: 100%;
+	display: block;
+	margin: 10px 0px;
+}
+div#adjust-box > .adjust-box-content > div.options > div.adjust-speed > div {
+	display: flex;
+	flex-direction: row;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 10px 0px;
+	box-shadow: rgb(0 0 0 / 15%) 0px 2px 8px;
+	background: white;
+	width: 100%;
+}
+div#adjust-box > .adjust-box-content > div.options > div.adjust-speed > div > p {
+	width: calc(100% / 4);
+	height: 40px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	background: white;
+	cursor: pointer;
+	border-right: 1px solid #00000042;
+}
+div#adjust-box > .adjust-box-content > div.options > div.adjust-speed > div > p.selected {
+	background: #e1e1e1;
+	font-weight: bold;
+}
+div#adjust-box > .adjust-box-content > div.options > div.adjust-speed > div > p:last-child {
+	border-right: none;
+}
+div#music-box {
+	width: 400px;
+	height: 400px;
+	display: none;
+}
+div#music-box > .music-box-content > .line {
+	height: 40px;
+	width: 100%;
+	display: flex;
+	box-shadow: rgb(0 0 0 / 6%) 0px 2px 8px;
+	flex-direction: row;
+	background: white;
+}
+div#music-box > .music-box-content > .line > p {
+	width: calc(100% / 2);
+	border-right: 1px solid #0000002b;
+	line-height: 40px;
+	height: 100%;
+	font-weight: bold;
+	font-size: 15px;
+	text-align: center;
+}
+div#music-box > .music-box-content > .line > p:last-child {
+	border-right: none;
+}
+div#music-box > .music-box-content > .music-list {
+	margin-top: 10px;
+	overflow: auto;
+	max-height: 230px;
+}
+div#music-box > .music-box-content > .music-list > .single-music {
+	width: 90%;
+	height: 50px;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 5px;
+	margin: 5px 0px;
+	border: 1px solid #00000042;
+	transition: 1s all ease-in-out;
+	cursor: pointer;
+}
+div#music-box > .music-box-content > .music-list > .single-music:hover {
+	background: #ededed;
+}
+div#music-box > .music-box-content > .music-list > .single-music > * {
+	display: inline-block;
+	float: left;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .icon {
+	height: 100%;
+	width: 50px;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .icon > img {
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .title {
+	height: 100%;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .title > p {
+	font-weight: bold;
+	font-size: 15px;
+	line-height: 30px;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .title > i {
+	/*font-weight: bold;*/
+	font-size: 13px;
+	display: block;
+	line-height: 14px;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .apply-btn {
+	float: right;
+	width: 70px;
+	height: 100%;
+	margin-right: 5px;
+}
+div#music-box > .music-box-content > .music-list > .single-music > .apply-btn > button {
+	height: 30px;
+	width: 100%;
+	font-weight: bold;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	color: white;
+	cursor: pointer;
+	transform: translate(-50%,-50%);
+	border: none;
+	background: red;
+}
+div#music-box > div.music-box-buttons > button {
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: red;
+}
+
+@keyframes Spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes uploadBtnAnimation {
+	0% {
+		font-size: 50px;
+	}
+	50% {
+		font-size: 60px;
+	}
+	100% {
+		font-size: 50px;
+	}
+}

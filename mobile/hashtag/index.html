@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/TVD (FYP)/images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/header.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/profile.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/login.css">
+
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/hashtag.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/hashtag_mobile.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/mobile_bottom_area.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>TVD - shoaib.gondal</title>
+</head>
+<body>
+	<div id="header">
+		<div class="title">
+			<p>
+				TVD
+			</p>
+		</div>
+	</div>
+	<div id="content">
+		<div class="user-info">
+			<p class="top-center hash-tag-icon">#</p>
+			<div class="user-details top-center">
+				<p class="hash-tag-name">#attackonkhan</p>
+			</div>
+			<!-- <div class="hashtag-details">
+				<p class="total-videos">12k videos in total</p>
+				<p class="total-videos-lastday">1.5k last day</p>
+			</div> -->
+		</div>
+		<div class="videos">
+		</div>
+	</div>
+	<div id="bottom-area">
+		<div>
+			<a class="fas fa-home" href="/TVD (FYP)/mobile/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-search" href="/TVD (FYP)/mobile/search/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-upload" href="/TVD (FYP)/mobile/upload/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fa-regular fa-bell" href="/TVD (FYP)/mobile/notifications/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-user" href="/TVD (FYP)/mobile/profile/">
+				
+			</a>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="/TVD (FYP)/js/essentials.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		let hashtag = new URLSearchParams(window.location.search).get('hashtag');
+		console.log(hashtag);
+		let userVideos = [];
+
+		let getHashtagVideos = async (hashtag,start,limit) => {
+
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				data : {
+					action : 'get-hashtag-videos',
+					hashtag : hashtag,
+					start : start,
+					limit : limit
+				},
+				dataType : 'json',
+				success : function (data) {
+					$('.hash-tag-name').text(data.hashtag);
+					userVideos.push(data.data);
+					if (userVideos.length == 0) {
+						$('.videos').append(`
+							<p class="no-video"> No Video Avaliable </p>
+						`)
+					}
+					else {
+						for (let i in data.data) {
+							$('.videos').append(`
+
+								<div class="singleVideo" style="background-image : url('/TVD (FYP)/images/thumbails/${data.data[i].thumbail}');">
+									<div class="playbtn">
+										<p class="fas fa-play"></p>
+									</div>
+								</div>
+							`)
+						}
+					}
+				}
+			});
+
+		}
+
+		// 
+		checkForSession();
+		if (hashtag == null) {
+			hashtag = "default";
+		}
+		else {
+			$('.hash-tag-name').text(hashtag);
+		}
+		console.log(hashtag)
+		getHashtagVideos(hashtag,0,10);
+
+	</script>
+</body>
+</html>

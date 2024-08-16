@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../images/logo.png">
+	<link rel="stylesheet" type="text/css" href="../../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../../css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="../../css/settings/profile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<title>Profile Settings - TVD</title>
+
+	<style type="text/css">
+		#options
+	</style>
+</head>
+<body>
+	<!-- Header -->
+
+	<div id="header">
+		<div class="site-logo top-center">TVD</div>
+		<div class="header-search top-center">
+			<div class="search-box">
+				<input type="" name="" placeholder="Search On TVD">
+				<i class="fas fa-search"></i>
+			</div>
+		</div>
+		<div class="header-buttons top-center">
+			<button class="fas fa-search"></button>
+			<a href="/TVD (FYP)/upload/index.html" class="header-upload"> <div> <i class="fas fa-plus"></i> <p>Upload</p></div> </a>
+			<a href="signup.html" class="header-signup"> Sign Up</a>
+			<a href="" class="header-login"> Login</a>
+			<div class="top-center">
+				<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="header-user-icon">
+				<div class="shadow-down">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Options -->
+	<div id="options">
+		<div class="setting-logo active">
+			<i class="fa-solid fa-cog"></i>
+			<p>Settings</p>
+		</div>
+		<div class="logout">
+			<i class="fa-solid fa-arrow-right-from-bracket"></i>
+			<p>Logout</p>
+		</div>
+	</div>
+	<!-- SideBar -->
+
+	<div id="content">
+		<div id="setting-options">
+			<h1>
+				Profile Settings
+			</h1>
+			<div class="single-setting">
+				<div class="profile-image">
+					<img src="https://i.ibb.co/X5bx2mc/Shoaib.png">
+				</div>
+				<div class="change-image">
+					<button>
+						Change Image
+					</button>
+					<input type="file" name="profile-pic" id="select-image" hidden>
+				</div>
+			</div>
+
+			<div class="single-setting update-setting name-update">
+				<p>
+					Name:
+				</p>
+				<div class="update-field">
+					<form>
+						<input type="text" name="column-value" id="update-field-name">
+						<input type="hidden" name="action" value="update-name">
+						<input type="hidden" name="column-name" value="name">
+						<input type="submit" name="" value="Update">
+					</form>
+				</div>
+			</div>
+
+
+			<div class="single-setting username-setting update-setting">
+				<p>
+					Username:
+				</p>
+				<div class="update-field">
+					<form>
+						<p>@</p>
+						<input type="text" name="column-value" id="update-field-username">
+						<input type="hidden" name="action" value="update-name">
+						<input type="hidden" name="column-name" value="username">
+						<input type="submit" name="" value="Update">
+					</form>
+				</div>
+			</div>
+
+			<div class="single-setting description-setting update-setting">
+				<p>
+					Description:
+				</p>
+				<div class="update-field">
+					<form>
+						<textarea id="update-field-description" name="column-value" placeholder="Description"></textarea>
+						<input type="hidden" name="action" value="update-name">
+						<input type="hidden" name="column-name" value="description">
+						<input type="submit" name="" value="Update">
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<script type="text/javascript" src="../../js/essentials.js"></script>
+	<script type="text/javascript">
+
+		let writeInSettings = (data) => {
+			$('#update-field-username').val(data.username);
+			$('#update-field-name').val(data.name);
+			$('#update-field-description').val(data.description);
+			$('.profile-image img').attr('src','../../images/DP/' + data.dp);
+			$('#header .header-buttons .header-login').hide();
+			$('#header .header-buttons .header-signup').hide();
+			$('#header .header-buttons .header-upload').show();
+			$('#header .header-buttons > div').show();
+			$('.header-user-icon').attr('src','../../images/DP/' + data.dp);
+		}
+
+		let formSubmit = (form) => {
+			console.log(form);
+			$.ajax({
+				url:'/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				dataType : 'json',
+				data : form,
+				success : (data) => {
+					console.log(data);
+				}
+			})
+		}
+
+
+
+		let getUserInfo = () => {
+			$.ajax({
+				url : '../../PHP/action.php',
+				method : 'post',
+				data : {
+					action : 'getUserInfo'
+				},
+				dataType : 'json',
+				success : function (data) {
+					if (!data.session) {
+						window.location = '../../index.html';
+					}
+					writeInSettings(data);
+				}
+			})
+		}
+
+		$(document).ready(() => {
+
+			getUserInfo();
+
+			let options = false;
+
+			$('#options .logout').on('click', () => {
+				$.ajax({
+					url : 'PHP/logout.php',
+					method : 'post',
+					dataType : 'json',
+					success : function (data) {
+						if (data.success) {
+							location.reload()
+							console.log("HII")
+						}
+					}
+				})
+			});
+
+			$('.shadow-down').on('click',() => {
+				if (!options) {
+					options = true;
+					$('#options').show();
+					$('.shadow-down').show();
+					$('.shadow-down i').removeClass('fa-caret-down');
+					$('.shadow-down i').addClass('fa-caret-up');
+				}
+				else {
+					options = false;
+					$('#options').hide();
+					$('.shadow-down i').removeClass('fa-caret-up');
+					$('.shadow-down i').addClass('fa-caret-down');
+				}
+			});
+
+			$(".name-update form").on('submit', (e) => {
+				e.preventDefault();
+				formSubmit($(".name-update form").serialize());
+			})
+			$(".username-setting form").on('submit', (e) => {
+				e.preventDefault();
+				formSubmit($(".username-setting form").serialize());
+			})
+			$(".description-setting form").on('submit', (e) => {
+				e.preventDefault();
+				formSubmit($(".description-setting form").serialize());
+			})
+
+			let selectPicture = () => {
+				$("#select-image").trigger('click');
+				console.log("Clicked");
+			}
+			$('#select-image').on('change',(event) => {
+				let formData = new FormData();
+				formData.append('image',event.target.files[0]);
+				$.ajax({
+					url : 'change_profile_picture.php',
+					method : 'post',
+					data : formData,
+					dataType : 'json',
+					contentType : false,
+					processData : false,
+					success : function (data) {
+						if (data.success) {
+							$('.profile-image img').attr('src','../../images/DP/' + data.fileName);
+						}
+					}
+				})
+			})
+			$('.change-image button').on('click', selectPicture);
+		})
+	</script>
+</body>
+</html>

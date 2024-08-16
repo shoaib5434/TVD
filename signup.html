@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/logo.png">
+	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/signup.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<title>TVD - Sign Up</title>
+</head>
+<body>
+	<div id="header">
+		<div class="site-logo top-center">TVD</div>
+	</div>
+
+	<div id="content">
+		<div class="signup-steps">
+			<i class="first active"></i>
+			<i class="second"></i>
+			<i class="third"></i>
+		</div>
+		<div id="signup">
+			<div class="cover">
+				<i class="fa-solid fa-clock"></i>
+			</div>
+			<div class="Loginheader">
+				<p>Welcome <i class="fa-solid fa-hands-clapping"></i></p>
+			</div>
+			<div class="body">
+				<form>
+					<input type="text" name="email" placeholder="Email">
+					<input type="password" name="password" placeholder="New Password">
+					<input type="password" name="cnfrm_password" placeholder="Confirm Password">
+					<button type="submit">Continue <i id="button-shadow"></i><p></p></button>
+				</form>
+				<div>
+					<p class="line"></p>
+					<p class="text">OR</p>
+				</div>
+				<button id="contWithGoogle">Sign Up With Google <i class="fa-brands fa-google"></i></button>
+			</div>
+			<div class="warning">
+				<p></p>
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+
+		<div id="mail-verification">
+			<div class="cover">
+				<i class="fa-solid fa-clock"></i>
+			</div>
+			<div class="body">
+				<p class="check-mail">
+					Check Your <br> Email <i class="fa-solid fa-envelope"></i>
+				</p>
+				<form>
+					<input type="text" name="code" placeholder="Code From Mail">
+					<button type="submit">Verify <i id="button-shadow"></i><p></p></button>
+					<button class="resend">Resend</button>
+				</form>
+			</div>
+			<div class="warning">
+				<p></p>
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+
+		<div id="user-info">
+			<div class="cover">
+				<i class="fa-solid fa-clock"></i>
+			</div>
+			<div class="body">
+				<p class="check-mail">
+					Fill Your <br> Info <i class="fa-solid fa-memo"></i>
+				</p>
+				<form>
+					<input type="text" name="name" placeholder="Name">
+					<input type="text" name="username" placeholder="Username">
+					<button type="submit">Update <i id="button-shadow"></i><p></p></button>
+				</form>
+			</div>
+			<div class="warning">
+				<p></p>
+				<i class="fa-solid fa-xmark"></i>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="account-created">
+		<div class="line">
+			<i class="fa-solid fa-circle-check"></i>
+			<p>Your Account Has Been Created</p>
+		</div>
+		<a href="index.html">Go To Homepage</a>
+	</div>
+	<div id="shadow"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script type="text/javascript">
+		$(document).ready(() => {
+			let globalMail;
+			let isMobile = new URLSearchParams(window.location.search).get('mobile');
+
+			if (isMobile != null) {
+				$("#account-created > a")[0].href = '/TVD (FYP)/mobile/';
+			}
+
+			// 05 - Hide Warning
+			$('.warning i.fa-xmark').on('click',() => {
+				$('.warning').hide(200)
+			})
+
+			// Sign UP Form Submit
+			$('#signup .body form').on('submit', (event) => {
+				let flag = true;
+				event.preventDefault()
+
+				// E-mail Validation
+				if (!(/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test($('#signup .body form input[name="email"]').val()))) {
+					flag = false;
+					$('#signup .warning').show();
+					$('#signup .warning p').html('<b> Invalid E-mail Address</b>')
+					$('#signup .warning').css('top','102px')
+				}
+
+				// Password Validation
+				if (!(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test($('#signup .body form input[name="password"]').val()))) {
+					flag = false;
+					$('#signup .warning').show();
+					$('#signup .warning p').html(`Password must contain at least <b>Number</b>, <b>Special Character</b>
+						,<b>Alphabet</b> and must be 8 character long.`)
+					$('#signup .warning').css('top','152px')
+				}
+
+				// Check Both Password Match
+				if ($('#signup .body form input[name="password"]').val() !== $('#signup .body form input[name="cnfrm_password"]').val()) {
+					flag = false;
+					$('#signup .warning').show();
+					$('#signup .warning p').html(`Both Passwords Don't Match.`)
+					$('#signup .warning').css('top','202px')
+				}
+
+				// Final Check
+				if (flag) {
+					$('#signup .body form button').addClass('getting');
+					$('#signup .warning').hide();
+
+					globalMail = $('#signup .body form input[name="email"]').val();
+
+					$.ajax({
+						url : 'PHP/action.php',
+						method : 'post',
+						// async : false,
+						dataType : 'json',
+						data : {
+							action : 'save-user-info',
+							'user-email' : $('#signup .body form input[name="email"]').val(),
+							'user-password' : $('#signup .body form input[name="password"]').val(),
+						},
+						success : function (data) {
+							if (data.success && !data.duplicateMail) {
+								$('#signup .cover').show()
+								$('#signup .cover i').removeClass('fa-clock')
+								$('#signup .cover i').addClass('fa-circle-check')
+								$('#signup form button').removeClass('getting')
+								$('#signup .cover i').css('color','green')
+								$('#mail-verification .cover').hide()
+								$('#signup').hide();
+								$('#mail-verification').show();
+								$('.signup-steps > i.active').removeClass('active');
+								$('.signup-steps > i:nth-child(2)').addClass('active');
+							}
+							else if (data.duplicateMail) {
+								$('#signup .warning').show();
+								$('#signup .warning p').html(`Email Already Exist Please Add New One Or Login`)
+								$('#signup .warning').css('top','108px')
+								$('#signup form button').removeClass('getting')
+							}
+						}
+					})
+				}
+			})
+			$('#mail-verification button.resend').on('click',(event) => {
+				event.preventDefault()
+				// Resend Ajax Request
+				$.ajax({
+					url : 'PHP/action.php',
+					method : 'post',
+					dataType : 'json',
+					data : {
+						action : 'resend-code',
+						mail : globalMail
+					},
+					success : function(data) {
+						if (data.success) {
+							$('#mail-verification button.resend').attr('disabled','');
+							$('#mail-verification button.resend').text('Resent!');
+							$('#mail-verification button.resend').css('color','green');
+						}
+					}
+				})
+
+			})
+
+			$('#mail-verification form').on('submit',(event) => {
+				event.preventDefault()
+				let flag = true
+
+				if (!(/^[0-9]{5}$/.test($('#mail-verification .body form input[name="code"]').val()))) {
+					flag = false;
+					$('#mail-verification .warning').show();
+					$('#mail-verification .warning p').html('<b> Code Must Be 5 Character Long And Can Only Contain Digits</b>')
+					$('#mail-verification .warning').css('top','158px')
+				}
+				// Resend Ajax Request
+				if (flag) {
+					$('#mail-verification .body form button').addClass('getting');
+					$('#mail-verification .warning').hide();
+
+					$.ajax({
+						url : 'PHP/action.php',
+						method : 'post',
+						dataType : 'json',
+						data : {
+							action : 'verify-code',
+							mail : globalMail,
+							code : $('#mail-verification form input[name="code"]').val()
+						},
+						success : function(data) {
+							if (data.success && data.verified) {
+								$('#mail-verification .cover').show()
+								$('#mail-verification .cover i').removeClass('fa-clock')
+								$('#mail-verification .cover i').addClass('fa-circle-check')
+								$('#mail-verification form button').removeClass('getting')
+								$('#mail-verification .cover i').css('color','green')
+								$('#user-info .cover').hide()
+								$('#mail-verification').hide();
+								$('#user-info').show();
+								$('.signup-steps > i.active').removeClass('active');
+								$('.signup-steps > i:nth-child(3)').addClass('active');
+							}
+							else if (!data.verified) {
+								$('#mail-verification .warning').show();
+								$('#mail-verification .warning p').html('<b> Code Is Incorrect Try Again</b>')
+								$('#mail-verification .warning').css('top','158px')
+								$('#mail-verification form button').removeClass('getting')
+							}
+						}
+					})
+				}
+
+			})
+
+			// User Info Form Submit
+			$('#user-info form').on('submit',(event) => {
+				event.preventDefault()
+				let flag = true
+
+				if ($('#user-info .body form input[name="name"]').val() == '') {
+					flag = false;
+					$('#user-info .warning').show();
+					$('#user-info .warning p').html('Field Must Not Be Empty')
+					$('#user-info .warning').css('top','158px')
+				}
+				if ($('#user-info .body form input[name="username"]').val() == '') {
+					flag = false;
+					$('#user-info .warning').show();
+					$('#user-info .warning p').html('Field Must Not Be Empty')
+					$('#user-info .warning').css('top','208px')
+				}
+				// Resend Ajax Request
+				if (flag) {
+					$('#user-info .body form button').addClass('getting');
+					$('#user-info .warning').hide();
+
+					$.ajax({
+						url : 'PHP/action.php',
+						method : 'post',
+						dataType : 'json',
+						data : {
+							action : 'add-username',
+							mail : globalMail,
+							name : $('#user-info form input[name="name"]').val(),
+							username : $('#user-info form input[name="username"]').val()
+						},
+						success : function(data) {
+							if (data.success && data.uniqueUsername) {
+								$('#user-info .cover').show()
+								$('#user-info .cover i').removeClass('fa-clock')
+								$('#user-info .cover i').addClass('fa-circle-check')
+								$('#user-info form button').removeClass('getting')
+								$('#user-info .cover i').css('color','green')
+								$('#shadow').show();
+								$('#account-created').show(200)
+							}
+							else if (!data.uniqueUsername) {
+								$('#user-info .warning').show();
+								$('#user-info form button').removeClass('getting')
+								$('#user-info .warning p').html('Username IS Not Unique')
+								$('#user-info .warning').css('top','208px')
+							}
+						}
+					})
+				}
+
+			})
+		})
+	</script>
+</body>
+</html>

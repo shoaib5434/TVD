@@ -1,0 +1,86 @@
+#content {
+	height: calc(100% - 90px);
+}
+.user-details .user-details-name,.user-details .user-details-username {
+	height: unset;
+	width: unset;
+}
+.user-details .user-details-name {
+	font-size: 14px;
+}
+.user-details .user-details-username {
+	font-size: 12px;
+}
+#content .user-info {
+	width: 100%;
+}
+.user-details > button {
+	top: 10px;
+	transform: unset;
+	width: 150px;
+	height: 30px;
+}
+.user-details > button.edit-profile {
+  background: #ffffff;
+  color: black;
+}
+.user-details > button.following {
+  background: #c8c8c8;
+  color: white;
+}
+#content .user-description {
+	width: 100%;
+}
+#content .user-description > .user-description-cred {
+	width: 100%;
+}
+.user-description > p {
+	font-size: 13px;
+	letter-spacing: 0px;
+}
+#header > p {
+	font-family: "Font Awesome 6 Free";
+	float: right;
+	right: 10px;
+	top: 50%;
+	font-size: 18px;
+	transform: translateY(-50%);
+}
+#options {
+	top: 50px;
+	right: 5px;
+	position: fixed;
+}
+.user-details > .login {
+	width: 90%;
+	height: 30px;
+	background: #188ace;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	border: none;
+	border-radius: 5px;
+	font-size: 12px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.user-details {
+	width: calc(100% - 100px);
+}
+.user-details > .please-login {
+	top: 50%;
+	transform: translateY(-50%);
+	background: #03b8ff;
+	font-size: 12px;
+	border-radius: 7px;
+}
+
+#listView {
+	width: 100%;
+	height: calc(100% - 50px);
+	top: unset;
+	transform: unset;
+	left: unset;
+	border-radius: unset;
+}

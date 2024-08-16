@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../images/logo.png">
+	<link rel="stylesheet" type="text/css" href="../css/header.css">
+	<link rel="stylesheet" type="text/css" href="../css/upload.css">
+	<link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>Upload | TVD</title>
+</head>
+<body>
+	<!-- Header -->
+
+	<div id="header">
+		<div class="site-logo top-center">TVD</div>
+		<div class="header-search top-center">
+			<div class="search-box">
+				<input type="" name="" placeholder="Search On TVD">
+				<i class="fas fa-search"></i>
+			</div>
+		</div>
+		<div class="header-buttons top-center">
+			<button class="fas fa-search"></button>
+			<a href="index.html" class="header-upload"> <div> <i class="fas fa-plus"></i> <p>Upload</p></div> </a>
+			<a href="" class="header-signup"> Sign Up</a>
+			<a href="" class="header-login"> Login</a>
+			<div class="top-center">
+				<img src="https://i.ibb.co/X5bx2mc/Shoaib.png" class="header-user-icon">
+				<div class="shadow-down">
+					<i class="fas fa-caret-down"></i>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Options -->
+	<div id="options">
+		<div class="setting-logo">
+			<i class="fa-solid fa-cog"></i>
+			<p>Settings</p>
+		</div>
+		<div class="logout">
+			<i class="fa-solid fa-arrow-right-from-bracket"></i>
+			<p>Logout</p>
+		</div>
+	</div>
+	<!-- Conent -->
+
+	<div id="content">
+		<div id="left-part" >
+			<div id="preview">
+				<canvas hidden></canvas>
+				<video autoplay="true" loop muted>
+					<source src="" type="">
+				</video>
+				<div id="bgMusic">
+					<i class="fas fa-music"></i>
+				</div>
+				<div class="mute">
+					<i class="fa-solid fa-volume-high"></i>
+				</div>
+				<div class="buttons">
+					<button>
+						<i class="fas fa-crop"></i>
+						<p>
+							Crop And Cut
+						</p>
+					</button>
+					<button>
+						<i class="fas fa-film"></i>
+						<p>
+							Adjust
+						</p>
+					</button>
+				</div>
+			</div>
+			<div class="upload" data-before="Drag Here To Upload">
+				<p class="fas fa-cloud-arrow-up icon"></p>
+				<p class="smallText">
+					Click Anywhere In The Box to Upload Or Drag Files Here
+				</p>
+				<div class="instructions">
+					<p>9:16 Format Is Ideal</p>
+					<p>Upto 1 min</p>
+					<p>Upto 100 Mbs</p>
+				</div>
+				<button>Select File</button>
+				<div id="upload-shadow">
+					<div class="loader center">
+						<div class="wheel"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="right-part">
+			<div class="caption">
+				<p class="title">
+					Caption
+				</p>
+				<ul>
+					<li>
+						Use <b>@</b> to mention other people in your video
+					</li>
+					<li>
+						Use <b>#</b> to get more reach
+					</li>
+				</ul>
+				<textarea id="video-caption-input" placeholder="Write Something About Your Video....."></textarea>
+			</div>
+
+			<div class="thumbail-preview">
+				<div class="title">
+					<p>
+						Thumbail
+					</p>
+				</div>
+				<img src="" id="thumbail-image">
+			</div>
+
+			<div class="tags">
+				<div class="title">
+					<p>
+						Video Tags
+					</p>
+					<p id="tags-red-alert">
+						(At least 5 must be added)
+					</p>
+				</div>
+				<div class="selected-tags">
+				</div>
+				<div class="tags-box">
+					<form autocomplete="off">
+						<input type="text" name="new-tag" placeholder="Add tags to your video">
+						<input type="submit" name="" value="Add">
+					</form>
+				</div>
+			</div>
+
+
+			<div class="privacy-shortcuts">
+				<p class="title">
+					Privacy Options
+				</p>
+				<div class="select-view-mode">
+					<p>
+						Who Can View Your Video Online
+					</p>
+					<select id="video-mode">
+						<option>Public</option>
+						<option>Followers</option>
+						<option>Only You</option>
+					</select>
+				</div>
+				<div class="select-view-mode others">
+					<p>
+						Viewrs Are Allowed To
+					</p>
+					<div class="comment">
+						<p>Comment</p>
+						<input id="video-comment-input" type="checkbox" name="" checked>
+					</div>
+				</div>
+			</div>
+			<form id="main-form">
+				<input type="file" name="user-video" accept="video/*" hidden>
+				<input type="submit" name="" hidden>
+			</form>
+			<button id="upload-post" >Post</button>
+		</div>
+	</div>
+	<div id="crop-box-shadow">
+		
+	</div>
+	<div id="crop-box">
+		<div class="crop-box-header">
+			<p>
+				Crop And Cut
+			</p>
+		</div>
+		<div class="crop-box-content">
+			<div id="crop-box-video-container">
+				<video class="center" autoplay="true" muted loop id="crop-box-video">
+					<source type="video/mp4">
+				</video>
+				<div id="leftShadow"></div>
+				<div id="croper">
+				</div>
+				<div id="rightShadow"></div>
+				<div id="shadow">
+					<div class="loader center">
+						<div class="wheel"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="crop-box-buttons">
+			<div class="right-btns">
+				<button class="cancel">Cancel</button>
+				<button class="done">Done</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="adjust-box">
+		<div class="adjust-box-header">
+			<p>
+				Adjust Your Video
+			</p>
+		</div>
+		<div class="adjust-box-content">
+			<div id="adjust-box-video-container">
+				<video class="center" autoplay="true" muted loop id="adjust-box-video">
+					<source src="C:/xampp_new/htdocs/Practice/youtube.mp4" type="video/mp4">
+				</video>
+				<div id="adjust-shadow">
+					<div class="loader center">
+						<div class="wheel"></div>
+					</div>
+				</div>
+			</div>
+			<div class="options">
+				<div class="adjust-speed">
+					<p class="title">
+						Speed
+					</p>
+					<div class="speed-options">
+						<p class="">0.5x</p>
+						<p class="selected">1x</p>
+						<p>1.5x</p>
+						<p>2x</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="adjust-box-buttons">
+			<div class="right-btns">
+				<button class="cancel">Cancel</button>
+				<button class="done">Done</button>
+			</div>
+		</div>
+	</div>
+	<div id="music-box">
+		<div class="music-box-header">
+			<p>
+				Background Music
+			</p>
+		</div>
+		<div class="music-box-content">
+			<div class="line">
+				<p class="trending">Trending</p>
+				<p class="yourlist">Saved</p>
+			</div>
+			<div class="music-list">
+				<div class="single-music">
+					<div class="icon">
+						<img src="https://images.unsplash.com/photo-1518577915332-c2a19f149a75?ixlib=rb-1.2.1&dl=joanna-nix-walkup-h2pnXHMz8YM-unsplash.jpg&q=80&fm=jpg&crop=entropy&cs=tinysrgb">
+					</div>
+					<div class="title">
+						<p>apki manzil hoon mein</p>
+						<i>shoaib_gondal___ • 0:29</i>
+					</div>
+					<div class="apply-btn">
+						<button data-music-index="0">Apply</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="music-box-buttons">
+			<button class="close">Close</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="../js/essentials.js"></script>
+	<script type="text/javascript">
+		checkForSession();
+		$(document).ready(() => {
+			let isVideoMute = true;
+			let listFiles = [];
+			let globalTags = [];
+			let videoInfo = {
+				height : 720,
+				width : 960
+			};
+			let videoFileName;
+			let userInfo;
+			let fileDirectory = "../videos";
+			let isMainVideoPlaying = true;
+			let videoSpeed = 1;
+			let lastVideoSpeed = 1;
+			let musicList = [{url : 'C:/xampp_new/htdocs/Practice/test.mp3'}];
+			let videoThumbail;
+
+			/*	Utility Functions */
+
+
+			const replaceHash = (caption,hashtags) => {
+			    for (let i = 0; i < caption.length; ++i) {
+			        if (caption[i] == '#') {
+			        	let hashtag = "";
+			        	let link = `<a class="_hashtag" href="/TVD (FYP)/hashtag?hashtag=`;
+			            caption = caption.slice(0,i) + link + caption.slice(i+1,caption.length);
+			            i += link.length;
+			            while (i < caption.length && caption[i] != ' ' && caption[i] != '\n') {
+			            	hashtag += caption[i];
+			                ++i;
+			            }
+			            hashtag = '#' + hashtag;
+			            caption = caption.slice (0,i) + `">${hashtag}</a>` + caption.slice(i,caption.length);
+			            i += hashtag.length;
+			            hashtags.push(hashtag);
+			        }
+			    }
+
+			    return caption;
+			}
+			// replaceHash("#hello #london",musicList);
+
+			const replaceUsers = (caption,users) => {
+				for (let i = 0; i < caption.length; ++i) {
+					if (caption[i] == '@') {
+						let username = "";
+						let link = `<a class="_user" href="/TVD (FYP)/profile?user=`;
+			            caption = caption.slice(0,i) + link + caption.slice(i+1,caption.length);
+			            i += link.length;
+			            while (i < caption.length && caption[i] != ' ' && caption[i] != '\n') {
+			            	username += caption[i];
+			                ++i;
+			            }
+			            username = '@' + username;
+			            caption = caption.slice (0,i) + `">${username}</a>` + caption.slice(i,caption.length);
+			            i += username.length;
+			            users.push(username);
+					}
+				}
+				console.log(users);
+				return caption;
+			}
+
+			const findTag = (tag) => {
+				for (let i = 0; i < globalTags.length; ++i) {
+					if (globalTags[i] == tag) return i;
+				}
+				return -1;
+			}
+			const removeTag = (event) => {
+				let clicked = event.target;
+				console.log(clicked.parentElement)
+				globalTags.splice(findTag(clicked.parentElement.children[0].text),1);
+				clicked.parentElement.style.display = 'none';
+				console.log(globalTags)
+			}
+
+			const removeDragClass = () => {
+				event.preventDefault()
+				$(".upload").removeClass('dragedFile')
+			}
+
+			function base64ToBlob(base64, mime) 
+			{
+			    mime = mime || '';
+			    var sliceSize = 1024;
+			    var byteChars = window.atob(base64);
+			    var byteArrays = [];
+
+			    for (var offset = 0, len = byteChars.length; offset < len; offset += sliceSize) {
+			        var slice = byteChars.slice(offset, offset + sliceSize);
+
+			        var byteNumbers = new Array(slice.length);
+			        for (var i = 0; i < slice.length; i++) {
+			            byteNumbers[i] = slice.charCodeAt(i);
+			        }
+
+			        var byteArray = new Uint8Array(byteNumbers);
+
+			        byteArrays.push(byteArray);
+			    }
+
+			    return new Blob(byteArrays, {type: mime});
+			}
+
+			const createThumbail = () => {
+				let video = $("#preview video")[0];
+				let canvas = $("#preview canvas")[0];
+				canvas.width = video.videoWidth;
+				canvas.height = video.videoHeight;
+
+				console.log(video.videoHeight);
+
+				let canvas_ctx = canvas.getContext("2d");
+
+				canvas_ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+				let thumbailContainerImg = document.getElementById("thumbail-image");
+				thumbailContainerImg.src = canvas.toDataURL();
+
+				videoThumbail = canvas.toDataURL();
+			}
+
+			const musicBoxUp = () => {
+				$('#music-box button.close').off()
+				$('#music-box button.close').on('click', () => {
+					$('#music-box').hide()
+					$('#crop-box-shadow').hide()
+				})
+				let musicIndex;
+				$('#music-box .apply-btn button').off('click')
+				$('#music-box .apply-btn button').on('click', () => {
+					musicIndex = $('#music-box .apply-btn button').data('music-index')
+					$.ajax({
+						url : 'http://localhost:3000/music',
+						method : 'post',
+						contentType : 'application/json',
+						data : JSON.stringify({
+							"editfile" : videoFileName,
+							"filename" : new Date().getTime() + userInfo,
+							"directory" : fileDirectory,
+							"musicurl" : musicList[musicIndex].url,
+							"duration" : 'shortest'
+						}),
+						dataType : 'json',
+						success : function (data) {
+							listFiles.push(videoFileName)
+							videoFileName = data.filename;
+							$('#music-box button.close').trigger('click')
+							$("#preview video")[0].src = '../videos/' + data.filename;
+							$("#preview video")[0].load()
+						}
+					})
+				})
+			}
+			const uploadVideo = (formData) => {
+				$.ajax({
+					url : '../PHP/upload_video.php',
+					method : 'post',
+					cache : false,
+					contentType : false,
+					processData : false,
+					data : formData,
+					dataType : 'json',
+					success : function (data) {
+						// console.log(data.name)
+						videoFileName = data.filename;
+
+						/* Play Video */
+						$('#preview video source').attr('src',`../videos/${videoFileName}`)
+						$('#preview video')[0].load()
+						let video = $("#preview video")[0];
+
+						fetch('http://localhost:3000/info?url=' + fileDirectory + '/' + videoFileName).then(data => data.json()).then(data => {
+							videoInfo = data;
+						}).catch(err => console.log(err));
+
+						/* Create Thumbail */
+
+						video.onloadeddata = () => {
+							createThumbail();
+						}
+
+					}
+				})
+			}
+
+			const fileSelected = (file) => {
+
+				let uploadForm = new FormData();
+				uploadForm.append('user-video',file)
+
+				$('#preview').css('display','inline-block')
+				$('.upload').css('display','none')
+
+				$('#upload-shadow').addClass('active')
+				uploadVideo(uploadForm)
+				$('#upload-shadow').removeClass('active')
+
+			    
+			    $("#preview video").on('click', () => {
+			    	if (isMainVideoPlaying) {
+			    		$("#preview video")[0].pause();
+			    		isMainVideoPlaying = false;
+			    	}
+			    	else {
+			    		$("#preview video")[0].play();
+			    		isMainVideoPlaying = true;
+			    	}
+			    })
+
+			    $("#bgMusic").off('click');
+			    $("#bgMusic").on('click', () => {
+			    	$("#music-box").show();
+			    	$("#crop-box-shadow").show()
+			    	musicBoxUp();
+			    });
+
+			    $('.mute').off('click')
+			    $('.mute').on('click', () => {
+			    	if (isVideoMute) {
+			    		$('.mute i').removeClass('fa-volume-high')
+			    		$('.mute i').addClass('fa-volume-xmark')
+			    		$("#preview video")[0].muted = false;
+			    		isVideoMute = false;
+			    	}
+			    	else {
+			    		$('.mute i').addClass('fa-volume-high')
+			    		$('.mute i').removeClass('fa-volume-xmark')
+			    		$("#preview video")[0].muted = true;
+			    		isVideoMute = true;
+			    	}
+			    })
+			}
+
+			const uploadFiles = () => {
+				$('#main-form input[type="file"]').trigger('click');
+			}
+			// Crop Box
+
+			const cropBoxUp = (videoUrl) => {
+				let video = document.getElementById('crop-box-video');
+				video.src = `${videoUrl}`;
+				video.load()
+				let croper = document.getElementById('croper')
+				let leftShadow = document.getElementById('leftShadow')
+				let rightShadow = document.getElementById('rightShadow')
+				let videoPlaying = false;
+
+				$('.crop-box-buttons button.done').addClass('disabled');
+
+
+				video.onloadeddata = () => {
+
+					$('.crop-box-buttons button.done').removeClass('disabled');
+
+					croper.style.height = video.clientHeight + 'px';
+					leftShadow.style.height = video.clientHeight + 'px';
+					rightShadow.style.height = video.clientHeight + 'px';
+					croper.style.width = (video.clientHeight/16)*9 + 'px';
+					rightShadow.style.width = (video.clientWidth - croper.clientWidth) + 'px';
+					croper.style.left = video.offsetLeft - (video.clientWidth/2) + 'px';
+					leftShadow.style.left = video.offsetLeft - (video.clientWidth/2) + 'px';
+					rightShadow.style.right = video.offsetLeft - (video.clientWidth/2) + 'px';
+					croper.style.top = video.offsetTop - (video.clientHeight/2) + 'px';
+					leftShadow.style.top = video.offsetTop - (video.clientHeight/2) + 'px';
+					rightShadow.style.top = video.offsetTop - (video.clientHeight/2) + 'px';
+
+					$(document).on('keyup',(event) => {
+						if (event.keyCode == 32) {
+							if (videoPlaying) {
+								videoPlaying = false;
+								video.pause()
+							}
+							else {
+								videoPlaying = true;
+								video.play()
+							}
+						}
+					})
+
+					$("#croper").draggable({
+				    	containment : $('#crop-box-video'),
+				    	drag : function () {
+				    		leftShadow.style.width = $(this)[0].offsetLeft - (video.offsetLeft - (video.clientWidth/2)) + 'px'
+				    		rightShadow.style.width = (video.clientWidth - (croper.clientWidth + $(this)[0].offsetLeft)) + 'px'
+				    	}
+				    });
+
+
+				}
+
+				$('.crop-box-buttons button.done').on('click', () => {
+					let x = document.getElementById('leftShadow').clientWidth;
+					x = (x/videoInfo.height*100) * (videoInfo.width/100);
+					if (x < 0) x = 0;
+					let y = 0;
+					let height;
+					let width;
+
+					height = videoInfo.height;
+					width = (height/16) * 9;
+
+					console.log(videoInfo)
+
+					$('#shadow').addClass('active')
+					$('.crop-box-buttons button.done').addClass('disabled')
+
+					$.ajax({
+						url : 'http://localhost:3000/crop',
+						method : 'post',
+						contentType : 'application/json',
+						data : JSON.stringify({
+							"editfile" : videoFileName,
+							"directory" : fileDirectory,
+							"filename" : 'VID-' + new Date().getTime() + userInfo,
+							"height" : height,
+							"width" : width,
+							"x" : x,
+							"y" : y
+						}),
+						dataType : 'json',
+						success : function (data) {
+							video.src = "../videos/" + data.filename;
+							$('#shadow').removeClass('active');
+							$('.crop-box-buttons button.done').removeClass('disabled')
+							listFiles.push(videoFileName)
+							videoFileName = data.filename;
+							$('#preview video')[0].src = "../videos/" + data.filename;
+							$('#preview video')[0].load()
+							$('#crop-box').hide(200)
+							$('#crop-box-shadow').hide(200)
+						}
+					})
+				})
+
+			}
+
+			// Adjust Box
+
+			const adjustBoxUp = (videoUrl) => {
+				let video = document.getElementById('adjust-box-video');
+				video.src = `${videoUrl}`;
+				video.load();
+				let videoPlaying = true;
+
+				$('.adjust-box-buttons button.done').addClass('disabled');
+
+				$('.speed-options p').on('click', (event) => {
+					$('.speed-options p.selected').removeClass('selected');
+					let curElement = event.target;
+					curElement.classList.add('selected')
+					videoSpeed = curElement.textContent
+					videoSpeed = parseFloat(videoSpeed.substring(0,videoSpeed.length - 1))
+				});
+				video.onloadeddata = () => {
+
+					$('.adjust-box-buttons button.done').removeClass('disabled');
+
+					$(document).on('keyup',(event) => {
+						if (event.keyCode == 32) {
+							if (videoPlaying) {
+								videoPlaying = false;
+								video.pause()
+							}
+							else {
+								videoPlaying = true;
+								video.play()
+							}
+						}
+					})
+				}
+
+
+				$('#adjust-box button.done').off('click')
+
+				$('#adjust-box button.done').on('click', () => {
+
+
+					if (videoSpeed != lastVideoSpeed) {
+						
+						$('#adjust-shadow').addClass('active')
+						$('.adjust-box-buttons button.done').addClass('disabled')
+
+						$.ajax({
+							url : 'http://localhost:3000/adjust',
+							method : 'post',
+							contentType : 'application/json',
+							data : JSON.stringify({
+								"editfile" : videoFileName,
+								"directory" : fileDirectory,
+								"filename" : 'VID-' + new Date().getTime() + userInfo,
+								"isSpeed" : true,
+								"speed" : videoSpeed,
+								"isFilter" : false
+							}),
+							dataType : 'json',
+							success : function (data) {
+								listFiles.push(videoFileName)
+								videoFileName = data.filename;
+								$('#adjust-box video')[0].src = '../videos/' + data.filename;
+								$('#adjust-box video')[0].load()
+								$('#adjust-shadow').removeClass('active')
+								$('.adjust-box-buttons button.done').removeClass('disabled')
+								$('#adjust-box').hide();
+								$('#crop-box-shadow').hide();
+								$("#preview video")[0].src = '../videos/' + videoFileName;
+								$("#preview video")[0].load();
+							}
+						})
+					}
+				})
+			}
+
+
+			/*	------------------------------------ */
+
+			/* SSSIONS WORK */
+
+
+			$.ajax({
+				url : '../PHP/action.php',
+				method : 'post',
+				data : {
+					action : 'check-for-session'
+				},
+				dataType : 'json',
+				success : function (data) {
+					if (!data.session) {
+						$('#content').html(`
+							<p> You're not logged in please go to <a href="../index.html"> home </a> </p>
+						`);
+					}
+					else if (!data.verified) {
+						$('#content').html(`
+							<p> Your session is not verified please go to <a href="../index.html"> home </a> </p>
+						`);
+					}
+					else {
+						$('#header .header-buttons .header-login').hide();
+						$('#header .header-buttons .header-signup').hide();
+						$('#header .header-buttons .header-upload').show();
+						$('#header .header-buttons > div').show();
+						userInfo = data.message;
+					}
+				}
+			})
+
+			/* Drag & Drop  */
+
+			$('html').on('dragover', (event) => {
+				event.preventDefault()
+				$(".upload").addClass('dragedFile');
+			})
+
+			$('html').on('drop', (event) => {
+				console.log("Drop")
+				removeDragClass()
+			})
+			$('html').on('dragexit', () => {
+				console.log("DragExit")
+				removeDragClass()
+			})
+			$('html').on('dragleave', () => {
+				console.log('Dragleave')
+				removeDragClass()
+			})
+			$('html').on('dragend', () => {
+				console.log("DragEnd")
+				removeDragClass()
+			})
+
+			$('.upload').on('dragover', (event) => {
+				// event.preventDefault()
+				$('.upload').attr('data-before',"Drop Here")
+				$('.upload:before').css('color','red')
+			})
+
+			$('.upload').on('dragleave', (event) => {
+				// event.preventDefault()
+				$('.upload').attr('data-before',"Drag Here To Upload")
+				$('.upload:before').css('color','#6033af')
+			})
+
+			document.getElementsByClassName('upload')[0].addEventListener('drop', (event) => {
+				event.preventDefault()
+				fileSelected(event.dataTransfer.files[0])
+			})
+			$('.upload').on('click', uploadFiles)
+			$('.upload button').on('click', uploadFiles)
+
+			$('#main-form input[type="file"]').on('change',(event) => {
+				fileSelected(event.target.files[0])
+			});
+
+			/* ------------------------------------------- */
+
+			$('.crop-box-buttons button.cancel').on('click', () => {
+				$('#crop-box-shadow').hide(200)
+				$('#crop-box').hide(200)
+			})
+
+			$('.adjust-box-buttons button.cancel').on('click', () => {
+				$('#crop-box-shadow').hide(200)
+				$('#adjust-box').hide(200)
+			})
+
+			$('#preview .buttons button:first-child').on('click', () => {
+				$('#preview video')[0].pause()
+				cropBoxUp('../videos/' + videoFileName);
+				$('#crop-box').show();
+				$('#crop-box-shadow').show()
+			})
+
+			$('#preview .buttons button:last-child').on('click', () => {
+				$('#preview video')[0].pause()
+				adjustBoxUp('../videos/' + videoFileName);
+				$('#adjust-box').show();
+				$('#crop-box-shadow').show()
+			})
+
+			$('.tags-box form').on('submit', (event) => {
+				event.preventDefault();
+				let tagValue = $('.tags-box form input[name="new-tag"]').val();
+				if (!/^\s*$/.test(tagValue) && findTag(tagValue) == -1) {
+					globalTags.push(tagValue)
+					$('.selected-tags').append(`
+						<div>
+							<p>${tagValue}</p>
+							<i class="fas fa-xmark"></i>
+						</div>
+					`);
+					$('.tags-box form input[name="new-tag"]').val('')
+					$('.selected-tags div i.fa-xmark').off('click')
+					$('.selected-tags div i.fa-xmark').on('click', removeTag);
+				}
+			})
+			$('.selected-tags div i.fa-xmark').on('click', removeTag);
+
+			// Upload Post
+
+			$('#upload-post').on('click', () => {
+				let flag = true;
+				let caption = $('#video-caption-input').val();
+				let videoMode = $("#video-mode").val();
+				let comments = $('#video-comment-input').is(':checked')
+
+				if ( /^\s*$/.test(caption)) {
+					$('#video-caption-input').addClass('empty')
+					flag = false;
+				}
+				else {
+					$('#video-caption-input').removeClass('empty');
+				}
+				if (globalTags.length < 5) {
+					$('.tags-box').addClass('less');
+					$('#tags-red-alert').addClass('red')
+					flag = false;
+				}
+				else {
+					$('.tags-box').remove('less');
+					$('#tags-red-alert').remove('red')
+				}
+				if (videoFileName == undefined) {
+					$('.upload').addClass('empty')
+					flag = false;
+					console.log(true)
+				}
+				else {
+					$('.upload').removeClass('empty')
+				}
+
+				if (flag) {
+
+					let users = ["none"],hashtags = ["none"];
+
+					caption = replaceHash(caption,hashtags);
+					caption = replaceUsers(caption,users);
+					caption = caption.replaceAll('\n','<br>');
+
+					$('#upload-post').addClass('posting');
+					$('#upload-post').text('Posting..');
+
+					let url = "url/action";                
+					let image = videoThumbail;
+					let base64ImageContent = image.replace(/^data:image\/(png|jpg);base64,/, "");
+					let blob = base64ToBlob(base64ImageContent, 'image/png');
+
+					let imageFile = new FormData();
+					imageFile.append('image',blob);
+
+					$.ajax({
+						url : '../PHP/upload_thumbail.php',
+						method : 'post',
+						cache : false,
+						contentType : false,
+						processData : false,
+						data : imageFile,
+						dataType : 'json',
+						success : function (data) {
+							if (data.success) {
+								$.ajax({
+									url : '../PHP/action.php',
+									method : 'post',
+									dataType : 'json',
+									data : {
+										action : 'post-upload',
+										videofile : videoFileName,
+										tags : globalTags,
+										caption : caption,
+										comments : comments,
+										mode : videoMode,
+										videos : listFiles,
+										users_mentioned : users,
+										hashtags : hashtags,
+										thumbail : data.file
+									},
+									success : function (data) {
+										if (data.success) {
+											location.href = '../index.html';
+										}
+									}
+								})
+							}
+						}
+					})
+				}
+			})
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.sideBar > .notification > .red {
+	background: red;
+	font-size: 12px;
+	display: none;
+	top: 30%;
+	font-weight: bold;
+	left: 60%;
+	border-radius: 50%;
+	transform: translate(-50%,-50%);
+	position: absolute;
+	height: 8px;
+	width: 8px;
+}
+#notifications {
+	width: 330px;
+	overflow: auto;
+	scrollbar-width: none;
+	height: 100%;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0px 0px 40px #0000005c;
+	z-index: 101;
+	transition: all 0.5s ease-in-out;
+	display: none;
+	width: 0;
+}
+#notifications > p {
+	width: 100%;
+	text-align: center;
+	line-height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	padding-left: 5px;
+}
+#notifications > div {
+	width: 100%;
+	height: calc(100% - 50px);
+}
+#notifications > div > div {
+	width: 100%;
+	cursor: pointer;
+	transition: 0.5s all ease-in-out;
+	border-bottom: 1px solid #d9d7d7;
+}
+#notifications > div > div  > * {
+	display: inline-block;
+}
+#notifications > div > div {
+	height: fit-content;
+	width: 100%;
+}
+#notifications > div > div.unread {
+	background: #d7d7d7;
+	font-style: italic;
+}
+#notifications > div > div > img.icon {
+	height: 40px;
+	float: left;
+	width: 40px;
+	border-radius: 50%;
+	margin: 10px 10px;
+}
+#notifications > div > div > p {
+	line-height: 20px;
+	font-size: 14px;
+	min-height: 40px;
+	margin: 10px 10px 15px 10px;
+	width: calc(100% - 80px);
+}
+#notifications > div > div > p.thumbail-noti {
+	width: calc(100% - 130px);
+	float: left;
+}
+#notifications > div > div > .thumbail {
+	height: 60px;
+	width: 40px;
+	margin: 10px 0px;
+}
+#notifications > div > div > .thumbail > img {
+	max-height: 100%;
+	max-width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+} 
+#notifications > div > div:hover {
+	background: #f7f7f7;
+}

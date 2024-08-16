@@ -1,0 +1,131 @@
+.sideBar {
+	width: 250px;
+	height: calc(100% - 60px);
+	float: left;
+	overflow: auto;
+	background-color: white;
+	border-right: 1px solid #0000004d;
+}
+.sideBar > a > * {
+	display: inline-block;
+}
+.sideBar > a,.sideBar > b {
+	width: 100%;
+	line-height: 60px;
+	font-size: 17px;
+	display: block;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+}
+.sideBar > a > p {
+	padding-left: 3px;
+}
+.sideBar a:first-child {
+	font-weight: bold;
+}
+.sideBar p.category,.sideBar p.accounts,.sideBar p.hash-text {
+	width: 80%;
+	height: 25px;
+	font-size: 15px;
+	color: black;
+	border-radius: 20px;
+	left: 50%;
+	line-height: 25px;
+	text-align: center;
+	margin-top: 20px;
+	transform: translateX(-50%);
+	background-color: #d7d7d7;
+}
+.sideBar p.accounts,.sideBar p.hash-text {
+	width: 100%;
+	color: #999999;
+	background-color: transparent;
+	border-radius: unset;
+	border-top: 1px solid #0000004d;
+	margin-top: 20px;
+	height: 50px;
+	line-height: 50px;
+}
+.sideBar p.hash-text b {
+	border-radius: 50%;
+	height: 20px;
+	display: inline-block;
+	width: 20px;
+	color: black;
+	border: 1px solid black;
+	line-height: 20px;
+	margin-right: 3px;
+}
+.sideBar div.account {
+	width: 100%;
+	display: block;
+	height: 50px;
+}
+.sideBar div.account img {
+	height : 30px;
+	width: 30px;
+	border-radius: 50%;
+	margin-left: 10px;
+	float: left;
+	cursor: pointer;
+}
+.sideBar div.account a {
+	line-height: 50px;
+	display: inline-block;
+	margin-left: 10px;
+	font-weight: bold;
+	color: black;
+	height: 100%;
+	text-decoration: none;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+.sideBar div.trend {
+	width: fit-content;
+	padding: 0px 10px;
+	margin-top: 5px;
+	height: 30px;
+	text-align: center;
+	left: 50%;
+	cursor: pointer;
+	transform: translateX(-50%);
+	line-height: 30px;
+	background-color: #ebebeb;
+	border-radius: 20px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+
+
+@media (max-width : 1400px) {
+	.sideBar {
+		width: 70px;
+	}
+	body #content {
+		width: clac(100% - 70px) !important;
+	}
+	.sideBar div.account img {
+		left: 50%;
+		margin-left: unset;
+		background-color: black;
+		transform: translate(-50%,-50%);
+	}
+	.sideBar > a > p,.sideBar > b > p {
+		display: none;
+	}
+	.sideBar > p {
+		display: none;
+	}
+	.sideBar .trends {
+		display: none;
+	}
+	.sideBar .account > a {
+		display: none !important;
+	}
+	.sideBar .sug-acc {
+		margin-top: 30px;
+	}
+}

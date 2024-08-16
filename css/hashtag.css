@@ -1,0 +1,85 @@
+.hash-tag-icon {
+	width: 60px;
+	height: 60px;
+	background: black;
+	border-radius: 50%;
+	outline-offset: 2px;
+	margin: 0px 10px;
+	display: inline-block;
+	float: left;
+	color: white;
+	font-size: 40px;
+	text-align: center;
+	font-weight: bold;
+	line-height: 60px;
+}
+#content .user-info > button {
+	background: white;
+	color: black;
+}
+#content .user-info > button > p {
+	padding-right: 5px;
+}
+#content .user-info {
+/*	padding-bottom: 10px;*/
+	border-bottom: 1px solid #d2d2d2;
+	height: 100px;
+}
+#content .video-profile {
+	width: 220px;
+}
+#content .videos {
+	padding-top: 10px;
+}
+.user-info div.user-details
+{
+	height: 100%;
+}
+div.user-details > p {
+	height: 100%;
+	font-size: 24px;
+	line-height: 100px;
+	font-weight: bold;
+	font-style: italic;
+}
+div.hashtag-details {
+	float: right;
+	top: 50%;
+	height: 50px;
+	transform: translateY(-50%);
+	margin-right: 10px;
+}
+div.hashtag-details p {
+	font-size: 15px;
+	color: gray;
+	font-weight: bold;
+	font-style: italic;
+	line-height: 25px;
+}
+.videos {
+	padding-bottom: 20px;
+}
+.videos .singleVideo .playbtn {
+	width: 100%;
+	height: 100%;
+	display: none !important;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	background: rgba(0, 0, 0, .5);
+	position: absolute;
+	border-radius: inherit;
+}
+.videos .singleVideo .playbtn p {
+	color: white;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.videos .singleVideo .playbtn p:hover {
+	background: transparent;
+}
+.videos .singleVideo:hover .playbtn {
+	display: block !important;
+}

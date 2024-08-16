@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="/TVD (FYP)/images/logo.png">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/header.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/profile.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/sidebar.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/login.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/edit-box.css">
+
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/hashtag.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/hashtag_mobile.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/mobile_bottom_area.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/notloggedin.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/mobile_boxes.css">
+	<link rel="stylesheet" type="text/css" href="/TVD (FYP)/css/mobile/profile.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<title>TVD - shoaib.gondal</title>
+	<style type="text/css">
+		#edit-box {
+			height: 100%;
+			border-radius: unset;
+		}
+		#edit-box,#edit-box-video,#edit-box-details {
+			width: 100%;
+		}
+		#edit-box-video {
+			height: 200px;
+		}
+		#edit-box-details {
+			height: calc(100% - 200px);
+		}
+		#edit-box-details textarea {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div class="title">
+			<p>
+				TVD
+			</p>
+		</div>
+		<p class="fas fa-ellipsis-v"></p>
+	</div>
+	<div id="content">
+		<div id="options">
+			<div class="setting-logo">
+				<i class="fa-solid fa-cog"></i>
+				<p>Settings</p>
+			</div>
+			<div class="logout">
+				<i class="fa-solid fa-arrow-right-from-bracket"></i>
+				<p>Logout</p>
+			</div>
+		</div>
+		<div class="user-info">
+			<img class="top-center"/>
+			<div class="user-details top-center">
+				<p class="user-details-name">Muhammad Shoaib</p>
+				<p class="user-details-username">shoaib.gondal</p>
+				<button class="top-center">Follow</button>
+				<!-- <button class="login">Log In</button> -->
+				<!-- <p>User Not Found</p> -->
+			</div>
+		</div>
+		<div class="user-description">
+			<div class="user-description-cred">
+				<div>
+					<p>122K</p>
+					<b>Following</b>
+				</div>
+				<div>
+					<p>122K</p>
+					<b>Follower</b>
+				</div>
+				<div>
+					<p>122K</p>
+					<b>Videos</b>
+				</div>
+			</div>
+			<p>
+				C++<br>
+				PHP<br>
+				C<br>
+				C#<br>
+				Java Script
+			</p>
+		</div>
+		<div class="video-profile">
+			<a href="" class="selected"><i class="fas fa-play"></i><p>Uploads</p></a>
+			<a href=""><i class="fas fa-heart"></i><p>Liked</p></a>
+		</div>
+		<div class="videos">
+		</div>
+	</div>
+	</div>
+	<div id="notLoggedIn">
+		<p>
+			You're Not Logged In 🤔
+		</p>
+		<div>
+			<button>
+				Login
+			</button>
+			<a href="">
+				Sign UP
+			</a>
+		</div>
+	</div>
+	<div id="bottom-area">
+		<div>
+			<a class="fas fa-home" href="/TVD (FYP)/mobile/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-search" href="/TVD (FYP)/mobile/search/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-upload" href="/TVD (FYP)/mobile/upload/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fa-regular fa-bell" href="/TVD (FYP)/mobile/notifications/">
+				
+			</a>
+		</div>
+		<div>
+			<a class="fas fa-user" href="/TVD (FYP)/mobile/profile/">
+				
+			</a>
+		</div>
+	</div>
+	<div id="shadow"></div>
+	<div id="login" class="mobile-boxes">
+		<div class="Loginheader">
+			<p>Login</p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<div class="body">
+			<form>
+				<input type="text" name="email" placeholder="Email">
+				<input type="password" name="password" placeholder="Password">
+				<button type="submit">Continue <i id="button-shadow"></i><p></p></button>
+			</form>
+			<div>
+				<p class="line"></p>
+				<p class="text">OR</p>
+			</div>
+			<button id="contWithGoogle">Login With Google <i class="fa-brands fa-google"></i></button>
+		</div>
+
+		<div class="warning">
+			<p></p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+	</div>
+	<div id="mail-verification" class="mobile-boxes">
+		<div class="body">
+			<p class="check-mail">
+				Check Your <br> Email <i class="fa-solid fa-envelope"></i>
+			</p>
+			<p class="description">
+				We Have Sent A Code To <br> <b>gondalshoaib3333@gmail.com</b>
+			</p>
+			<form>
+				<input type="text" name="code" placeholder="Code From Mail">
+				<button type="submit">Verify <i id="button-shadow"></i><p></p></button>
+				<button class="resend">Resend</button>
+			</form>
+		</div>
+		<div class="warning">
+			<p></p>
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+	</div>
+	<div id="listView">
+		<div class="listHeader">
+			<i class="fas fa-arrow-left">
+				
+			</i>
+			<p>
+				Followers
+			</p>
+		</div>
+		<div class="list">
+			<div class="singleItem">
+				<a href="">
+					<img src="">
+					<p>shoaib.gondal</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div id="edit-box">
+		<button id="edit-box-close" class="fas fa-xmark"></button>
+		<div id="edit-box-video">
+			<video src="/TVD (FYP)/videos/VID-1667713388gondalshoaib3333@gmail.com.mp4" controls>
+				
+			</video>
+		</div>
+		<div id="edit-box-details">
+			<form>
+				<input type="hidden" name="video_id" value="">
+				<p class="edit-box-label">
+					Caption:
+				</p>
+				<textarea id="edit-box-caption"> </textarea>
+				<div>
+					<p class="edit-box-label">
+						Public
+					</p>
+					<input type="checkbox" name="" checked>
+				</div>
+				<div>
+					<p class="edit-box-label">
+						Comments
+					</p>
+					<input type="checkbox" name="" checked>
+				</div>
+				<input type="submit" name="" value="Update">
+			</form>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script type="text/javascript" src="/TVD (FYP)/js/essentials.js"></script>
+	<script type="text/javascript">
+		"use strict";
+		checkForSession(true);
+		let username = new URLSearchParams(window.location.search).get('user');
+		let userVideos = [],likedVideos = [],isFirstTimeLikeClicked = true,globalMail,isUserFollowing,userFollowings = [],userFollowers = [],isFirstTimeFollowingClicked = true;
+		let user_id,isOptionUp = false,isUserLogin;
+
+
+		$('#header > p').click(() => {
+			if (!isOptionUp) {
+				$("#options").show();
+				isOptionUp = true;
+			}
+			else {
+				$("#options").hide();
+				isOptionUp = false;
+			}
+		})
+
+		let writeList = (data) => {
+			for (let i in data) {
+				$('#listView .list').append(`
+					<div class="singleItem">
+						<a href="/TVD (FYP)/profile?user=${data[i].username}">
+							<img src="/TVD (FYP)/images/DP/${data[i].dp}">
+							<p>${data[i].username}</p>
+						</a>
+					</div>
+				`);
+			}
+		}
+
+		let writeVideos = (userVideos,liked,isLoggedIn) => {
+			if (userVideos.length == 0) {
+				$('.videos').append(`
+					<p class="no-video"> No Video Avaliable </p>
+				`)
+			}
+			else {
+				let optionsHtml ;
+				for (let i in userVideos) {
+					optionsHtml = `<div class="playbtn" data-index='${i}'>
+								<p class="fas fa-play"></p>
+							</div>`;
+					if (isLoggedIn && !liked) optionsHtml += `
+						<p class="fas fa-ellipsis-v"></p>
+						<div class="video-options">
+							<p class="video-options-option delete-video" data-id='${userVideos[i].post_id}'>Delete</p>
+							<p class="video-options-option edit-video" data-id='${userVideos[i].post_id}'>Edit</p>
+						</div>
+					`;
+					else optionsHtml += ``;
+					$('.videos').append(`
+
+						<div class="singleVideo" style="background-image : url('/TVD (FYP)/images/thumbails/${userVideos[i].thumbail}');">
+						${optionsHtml}
+						</div>
+					`)
+				}
+				$('.singleVideo > p').off('click');
+				$('.singleVideo > p').on('click', (event) => {
+					let isUp = event.currentTarget.parentNode.getElementsByClassName('video-options')[0].style.display;
+					if (isUp == '' || isUp == 'none') {
+						event.currentTarget.parentNode.getElementsByClassName('video-options')[0].style.display = 'block';
+					} 
+					else {
+						event.currentTarget.parentNode.getElementsByClassName('video-options')[0].style.display = 'none';
+					}
+				});
+				if (isLoggedIn && !liked) {
+					$('.delete-video').off('click');
+					$('.delete-video').on('click', (event) => {
+						verifyUser().then(data => {
+							console.log(data);
+						}).catch(() => {
+
+						})
+						let video_id = event.target.getAttribute('data-id');
+						$.ajax({
+							url : '/TVD (FYP)/PHP/user_profile.php',
+							method : 'post',
+							dataType : 'json',
+							data : {
+								action : 'delete-video',
+								video_id : video_id
+							},
+							success : function (data) {
+								if (data.success) {
+									event.currentTarget.parentNode.parentNode.style.display = 'none';
+								}
+							}
+						})
+					});
+
+					$('.edit-video').off('click');
+					$('.edit-video').on('click', (e) => {
+						$("#edit-box").show()
+						$("#shadow").show()
+
+						$.ajax({
+							url : '/TVD (FYP)/PHP/action.php',
+							method : 'post',
+							data : {action : 'get-video-info',video_id : e.target.getAttribute('data-id')},
+							dataType : 'json',
+							success : function (data) {
+								let videoCaption = data.data.caption,finalCaption = "";
+								for (let i = 0; i < videoCaption.length; ++i) {
+								    if (videoCaption[i] == '<') i = videoCaption.indexOf('>',i);
+								    else finalCaption += videoCaption[i];
+								}
+								$("#edit-box input[type='hidden']").val(data.data.post_id);
+								$('#edit-box-caption').val(finalCaption);
+								$('#edit-box-video > video').attr('src','/TVD (FYP)/videos/' + data.data.videofile);
+								$('#edit-box-video > video')[0].load();
+							}
+						});
+					})
+				}
+				$('.singleVideo .playbtn').on('click', (e) => {
+					if (e.target.tagName == "P") {
+						window.location = '/TVD (FYP)/mobile?user='+ user_id + '&index=' + e.target.parentNode.getAttribute('data-index');
+					}
+					else {
+						window.location = '/TVD (FYP)/mobile?user='+ user_id + '&index=' + e.target.getAttribute('data-index');
+					}
+				})
+			}
+		}
+
+		$('#listView > .listHeader > i').on('click', () => {
+			$('#listView').hide();
+		})
+
+		$('#notLoggedIn > div > button,.user-details > .please-login').on('click', () => {
+			$("#login,#shadow").show();
+		})
+		$('#login .Loginheader > i').on('click', () => {
+			$('#login,#shadow').hide();
+		})
+
+		$('.video-profile > a:nth-child(1)').on('click', (event) => {
+			event.preventDefault();
+			if (!$('.video-profile > a:nth-child(1)').hasClass('selected')) {
+
+				$('.video-profile > a.selected').removeClass('selected');
+				$('.video-profile > a:nth-child(1)').addClass('selected');
+
+				$('.videos').html('');
+				writeVideos(userVideos,true,isUserLogin);
+			}
+		});
+
+
+		$('#mail-verification button.resend').on('click',(event) => {
+			event.preventDefault()
+			// Resend Ajax Request
+			console.log(globalMail)
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				dataType : 'json',
+				data : {
+					action : 'resend-code',
+					mail : globalMail
+				},
+				success : function(data) {
+					if (data.success) {
+						$('#mail-verification button.resend').attr('disabled','');
+						$('#mail-verification button.resend').text('Resent!');
+						$('#mail-verification button.resend').css('color','green');
+					}
+				}
+			})
+
+		})
+
+		$('#mail-verification form').on('submit',(event) => {
+			event.preventDefault()
+			// Resend Ajax Request
+
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				dataType : 'json',
+				data : {
+					action : 'verify-code',
+					mail : globalMail,
+					code : $('#mail-verification form input[name="code"]').val()
+				},
+				success : function(data) {
+					if (data.success) {
+						if (data.success && data.verified) {
+							$('#mail-verification').hide();
+							$('#shadow').hide();
+							location.reload();
+						}
+						else if (!data.verified) {
+							$('#mail-verification .warning').show();
+							$('#mail-verification .warning p').html('<b> Code Is Incorrect Try Again</b>')
+							$('#mail-verification .warning').css('top','158px')
+							$('#mail-verification form button').removeClass('getting')
+						}
+					}
+				}
+			})
+
+		})
+
+		$("#login form").on("submit", () => {
+
+			event.preventDefault()
+			$('#login .body form button').addClass('getting');
+			console.log($('#login .body form input[name="email"]').val());
+			$('#login .body form input[name="email"]').attr('disabled','disabled');
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				dataType : 'json',
+				data : {
+					action : 'user-login',
+					mail : $("#login form input[name='email']").val(),
+					password : $("#login form input[name='password']").val()
+				},
+				success : function (data) {
+
+					$('#login form input[name="email"]').removeAttr('disabled');
+					$('#login form button').removeClass('getting');
+					if (!data.error && data.session) {
+						$('#login').hide()
+						$('#mail-verification').show();
+						$('#mail-verification p.description b').text($("#login form input[name='email']").val());
+					}
+					else if (!data.error && data.password) {
+						$('#login .warning').show();
+						$('#login .warning p').html('<b> Email Is Not registered</b>')
+						$('#login .warning').css('top','108px')
+					}
+					else if (!data.error && data.email) {
+						$('#login .warning').show();
+						$('#login .warning p').html('<b> Incorrect Password</b>')
+						$('#login .warning').css('top','108px')
+					}
+				}
+			})
+		})
+
+
+		let getFollowersAndFollowings = (writeFollowers,username) => {
+			let obj = {
+				action : 'fetch-followers-and-followings',
+				username : username
+			};
+			console.log(username);
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				data : obj,
+				dataType : 'json',
+				success : function (data) {
+					userFollowers = data.followers;
+					userFollowings = data.followings;
+					$('#listView .list').html('');
+					if (writeFollowers) {
+						$('#listView > .listHeader > p').text('Followers');
+						writeList(userFollowers);
+					}
+					else {
+						$('#listView > .listHeader > p').text('Followings');
+						writeList(userFollowings);
+					}
+				}
+			})
+		}
+
+
+		const replaceHash = (caption,hashtags) => {
+		    for (let i = 0; i < caption.length; ++i) {
+		        if (caption[i] == '#') {
+		        	let hashtag = "";
+		        	let link = `<a class="_hashtag" href="/TVD (FYP)/hashtag?hashtag=`;
+		            caption = caption.slice(0,i) + link + caption.slice(i+1,caption.length);
+		            i += link.length;
+		            while (i < caption.length && caption[i] != ' ' && caption[i] != '\n') {
+		            	hashtag += caption[i];
+		                ++i;
+		            }
+		            hashtag = '#' + hashtag;
+		            caption = caption.slice (0,i) + `">${hashtag}</a>` + caption.slice(i,caption.length);
+		            i += hashtag.length;
+		            hashtags.push(hashtag);
+		        }
+		    }
+
+		    return caption;
+		}
+		// replaceHash("#hello #london",musicList);
+
+		const replaceUsers = (caption,users) => {
+			for (let i = 0; i < caption.length; ++i) {
+				if (caption[i] == '@') {
+					let username = "";
+					let link = `<a class="_user" href="/TVD (FYP)/profile?user=`;
+		            caption = caption.slice(0,i) + link + caption.slice(i+1,caption.length);
+		            i += link.length;
+		            while (i < caption.length && caption[i] != ' ' && caption[i] != '\n') {
+		            	username += caption[i];
+		                ++i;
+		            }
+		            username = '@' + username;
+		            caption = caption.slice (0,i) + `">${username}</a>` + caption.slice(i,caption.length);
+		            i += username.length;
+		            users.push(username);
+				}
+			}
+			console.log(users);
+			return caption;
+		}
+
+		let verifyUser = (username = null) => {
+			let obj = {
+				action : 'verify-user'
+			};
+			if (username != null) obj['username'] = username;
+			return new Promise((resolve,reject) => {
+				resolve($.ajax({
+					url : '/TVD (FYP)/PHP/action.php',
+					method : 'post',
+					data : obj,
+					dataType : 'json',
+					success : function (data) {
+					}
+				}));
+			})
+		}
+		let getUserVideos = async (username = null,start,limit) => {
+
+			let isLoggedIn = await verifyUser(username).then(data => {
+
+				console.log(data);
+				if (username == null) username = data.username; 
+				return data.info;
+			})
+			.catch((err) => console.log(err));
+
+			console.log(isLoggedIn);
+			isUserFollowing = isLoggedIn.isUserFollowing;
+			isLoggedIn = isLoggedIn.isloggedIn
+			isUserLogin = isLoggedIn;
+
+			if (isUserFollowing) {
+				$('.user-description-cred > div').css('cursor','pointer');
+				$('.user-description-cred > div:nth-child(1)').on('click',(e) => {
+					$('#listView').show();
+					if (isFirstTimeFollowingClicked) {
+						getFollowersAndFollowings(false,username);
+						isFirstTimeFollowingClicked = false;
+					}
+					else {
+						$('#listView .list').html('');
+						$('#listView > .listHeader > p').text('Followings');
+						writeList(userFollowings);
+					}
+				});
+				$('.user-description-cred > div:nth-child(2)').on('click',(e) => {
+					$('#listView').show();
+					if (isFirstTimeFollowingClicked) {
+						getFollowersAndFollowings(true,username);
+						isFirstTimeFollowingClicked = false;
+					}
+					else {
+						$('#listView .list').html('');
+						$('#listView > .listHeader > p').text('Followers');
+						writeList(userFollowers);
+					}
+				});
+			}
+
+			if (isLoggedIn) {
+				$('.user-details > button').addClass('edit-profile');
+				$('.user-details > button').html('<p class="fa-solid fa-cog"> </p>Edit Profile');
+				$('.video-profile > a:nth-child(2)').on('click', (event) => {
+					event.preventDefault();
+					if (!$('.video-profile > a:nth-child(2)').hasClass('selected')) {
+
+						$('.video-profile > a.selected').removeClass('selected');
+						$('.video-profile > a:nth-child(2)').addClass('selected');
+
+						if (isFirstTimeLikeClicked) {
+							$.ajax({
+								url : '/TVD (FYP)/PHP/action.php',
+								method : 'post',
+								data : {'action' : 'fetch-liked-videos'},
+								dataType : 'json',
+								success : (data) => {
+									$('.videos').html('');
+									likedVideos = data.videos;
+									writeVideos(data.videos,true,isLoggedIn)
+									isFirstTimeLikeClicked = false;
+								}
+							})
+						}
+						else {
+							$('.videos').html('');
+							writeVideos(likedVideos,true,isLoggedIn)
+						}
+					}
+				});
+			}
+			else {
+				$('.video-profile > a:nth-child(2)').hide();
+			}
+
+			$.ajax({
+				url : '/TVD (FYP)/PHP/user_profile.php',
+				method : 'post',
+				data : {
+					action : 'get-user-videos',
+					username : username,
+					start : start,
+					limit : limit
+				},
+				dataType : 'json',
+				success : function (data) {
+					userVideos = data.data;
+					console.log(userVideos);
+					writeVideos(data.data,false,isLoggedIn);
+				}
+			});
+
+		}
+
+
+		let addUserInfo = (username = null) => {
+			
+			$('title').text((username == null ? 'Profile' : username) + ' - TVD');
+			let obj = {
+				action : 'get-user-info'
+			}
+			if (username != null) obj['username'] = username;
+			$.ajax({
+				url : '/TVD (FYP)/PHP/user_profile.php',
+				method : 'post',
+				data : obj,
+				dataType : 'json',
+				success : function (data) {
+					if (data.success) {
+						if (data.user_found) {
+							if ($('.user-details > button').hasClass('edit-profile')) ;
+							else if (data.isFollowedByUser) {
+								$('.user-details > button').text("Following");
+								$('.user-details > button').addClass("following");
+							}
+							else {
+								$('.user-details > button').addClass("follow");
+							}
+							user_id = data.id;
+							$('.user-details .user-details-name').text(data.name);
+							$('title').text(data.name + ' (@' + data.username + ')');
+							$('.user-details .user-details-username').text('@' + data.username);
+							$('.user-info img').attr('src','/TVD (FYP)/images/DP/' + data.dp);
+							$('.user-description > p').text(data.description);
+							$('.user-description .user-description-cred div:nth-child(1) p:first-child').text(data.following_count);
+							$('.user-description .user-description-cred div:nth-child(2) p:first-child').text(data.follower_count);
+							$('.user-description .user-description-cred div:nth-child(3) p:first-child').text(data.videos_count);
+							getUserVideos(username,0,10);
+						}
+						else {
+							verifyUser().then(data => {
+								if (!data.success) {
+									$('#header > p').hide();
+									$('.user-details').html(`
+										<button class="please-login">Login</button>
+									`);
+									$('.user-description,.video-profile,.videos').html('');
+								}
+								else {
+									$('.user-details').html(`
+										<p>user not found</p>
+									`);
+									$('.user-description,.video-profile,.videos').html('');
+								}
+								$('.please-login').on('click', () => {
+									$("#login,#shadow").show();
+								})
+							}).catch(e => {
+								$('.user-details').html(`
+									<p>user not found</p>
+								`);
+								$('.user-description,.video-profile,.videos').html('');
+							})
+						}
+					}
+				}
+			});
+
+
+		}
+
+		$('.user-details > button').on('click', (e) => {
+			let followUnfollow = "unfollowed"
+			if (e.target.classList.contains('edit-profile')) {
+				window.location = '/TVD (FYP)/settings/profile'
+			}
+			else {
+				if (e.target.classList.contains('following'))  followUnfollow = "followed";
+				$.ajax({
+					url : '/TVD (FYP)/PHP/action.php',
+					method : 'post',
+					data : {
+						action : 'follow-unfollow',
+						user_id : user_id,
+						current : followUnfollow
+					},
+					dataType : 'json',
+					success : function (data) {
+						if (data.success) {
+							if (data.message == 'Followed') {
+								$('.user-details > button').text("Following");
+								$('.user-details > button').addClass("following");
+								$('.user-details > button').removeClass("follow");
+							}
+							else {
+								$('.user-details > button').text("Follow");
+								$('.user-details > button').removeClass("following");
+								$('.user-details > button').addClass("follow");
+							}
+						}
+					}
+				})
+			} 
+		})
+
+		$('#edit-box-close').on('click', () => {
+			console.log("Hello");
+			$('#edit-box').hide();
+			$('#edit-box-video > video')[0].pause();
+			$('#shadow').hide();
+		})
+
+		$("#edit-box form").on('submit', (e) => {
+			e.preventDefault();
+			let caption = $("#edit-box form textarea").val();
+			let video_id = $("#edit-box form input[type='hidden']").val();
+			console.log(caption);
+			let hashtags = ["none"],users = ["none"];
+			caption = replaceHash(caption,hashtags);
+			caption = replaceUsers(caption,users);
+			$.ajax({
+				url : '/TVD (FYP)/PHP/action.php',
+				method : 'post',
+				dataType : 'json',
+				data : {
+					action : 'update-post',
+					video_id : video_id,
+					mentioned_users : users,
+					hashtags : hashtags,
+					caption : caption
+				},
+				success : function (data) {
+					$("#edit-box,#shadow").hide();
+				}
+			})
+		})
+
+		// 
+		console.log(username)
+		if (username == null) {
+			addUserInfo();
+		}
+		else {
+			addUserInfo(username);
+		}
+
+	</script>
+</body>
+</html>

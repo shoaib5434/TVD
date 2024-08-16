@@ -1,0 +1,88 @@
+#sticky-div .line i,#sticky-div .line p {
+	line-height: 30px;
+	font-size: 20px;
+	margin-top: 20px;
+	display: inline-block;
+	padding-left: 10px;
+	text-align: center;
+}
+#sticky-div .line i {
+	color: green;
+	font-size: 30px;
+	float: left;
+}
+#sticky-div .line p {
+	padding-left: 5px;
+
+}
+#sticky-div .line {
+	width: fit-content;
+	left: 50%;
+	transform: translateX(-50%);
+}
+div#sticky-div {
+	width: 500px;
+	height: 150px;
+	border-radius: 5px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: white;
+	z-index: 100;
+	display: none;
+}
+#sticky-div > a {
+	width: 200px;
+	display: block;
+	height: 40px;
+	background: #000089;
+	line-height: 40px;
+	text-align: center;
+	text-decoration: none;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	margin-top: 5px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+body .mobile-boxes {
+	position: absolute !important;
+	width: 100% !important;
+	bottom: 0px !important;
+	top: unset !important;
+	left: unset !important;
+	transform: unset !important;
+	border-bottom-right-radius: unset !important;
+	border-bottom-left-radius: unset !important;
+}
+#login .Loginheader > i {
+	width: 30px;
+	text-align: center;
+}
+#login .Loginheader > p,#login .Loginheader > i {
+	font-size: 15px;
+}
+.mobile-boxes#commentsBox {
+	height: 400px;
+}
+.mobile-boxes#commentsBox .comments-list {
+	height: 350px;
+}
+#commentsBox .write-comment form {
+	width: 99%;
+}
+#commentsBox .write-comment form input[type="submit"] {
+	padding: unset;
+	width: 25%;
+}
+#commentsBox .write-comment form input[type="text"] {
+	/*padding: unset;*/
+	width: 73%;
+}
+.mobile-boxes#commentsBox .commentsClose {
+	background: transparent;
+	color: red;
+}

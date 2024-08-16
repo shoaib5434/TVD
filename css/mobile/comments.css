@@ -1,0 +1,22 @@
+#commentsBox .comments-list .single-comment .single-comment-header {
+	line-height: 30px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header img {
+	height: 30px;
+	margin-left: 3px;
+	width: 30px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header p {
+	font-size: 10px;
+	margin-left: 3px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header b {
+	font-size: 12px;
+	margin-left: 3px;
+}
+#commentsBox .comments-list .single-comment .single-comment-body .comment-text {
+	font-size: 13px;
+}
+.mobile-boxes#commentsBox .comments-list {
+	height: 310px;
+}

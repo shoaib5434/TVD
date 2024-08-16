@@ -1,0 +1,29 @@
+body {
+	background: #fbfbfb;
+}
+#content {
+	width: 100%;
+	height: clac(100% - 50px);
+	top: 0;
+	left: 0;
+}
+.hash-tag-icon {
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	font-size: 30px;
+}
+.user-info .user-details {
+	margin-left: 0;
+}
+div.user-details > p {
+	font-size: 20px;
+}
+.videos {
+	justify-content: center;
+}
+.videos .singleVideo {
+	width: 100px;
+	height: 150px;
+
+}

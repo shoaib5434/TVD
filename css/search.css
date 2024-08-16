@@ -1,0 +1,199 @@
+#search {
+	width: 330px;
+	height: 100%;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0px 0px 40px #0000005c;
+	z-index: 101;
+	width: 0px;
+	display: none;
+	transition: all 0.5s ease-in-out;
+}
+#search .search-input {
+	width: 300px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20px;
+	background: #f0f0f0;
+	border-radius: 5px;
+	font-weight: bold;
+	height: 35px;
+}
+#search .search-input  > * {
+	top: 50%;
+	float: left;
+	transform: translateY(-50%);
+	background: transparent;
+	border-radius: inherit;
+}
+#search .search-input  > p {
+	width: 50px;
+	text-align: center;
+}
+#search .search-input  > p > img {
+	height: 40px;
+	width: 40px;
+}
+#search .search-input  > input {
+	width: calc(100% - 50px);
+	height: 90%;
+	font-weight: bold;
+	border: none;
+	outline: none;
+}
+#search .search-input  > input:focus {
+	outline: none;
+}
+#search .search-result {
+	width: 300px;
+	left: 50%;
+	transform: translateX(-50%);
+	margin-top: 20px;
+	height: calc(100% - 90px);
+	overflow: auto;
+	scrollbar-width: none;
+}
+#search .search-result .no-history,#search .search-result .no-result {
+	width: 100%;
+	top: 50%;
+	display: none;
+	transform: translateY(-50%);
+}
+#search .search-result .no-history {
+	display: block;
+}
+#search .search-result .no-history > *,#search .search-result .no-result > * {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+#search .search-result .no-history > i,#search .search-result .no-result > i {
+	font-size: 35px;
+	line-height: 60px;
+	font-style: normal;
+}
+#search .search-result .no-history > p,#search .search-result .no-result > p {
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 25px;
+}
+#search .search-result .no-result {
+	display: block;
+	height: fit-content;
+}
+#search .search-profile {
+	height: 35px;
+	margin: 10px 0px;
+	width: 300px;
+	cursor: pointer;
+	display: flex;
+	flex-wrap: nowrap;
+	display: none;
+	left: 50%;
+	transform: translateX(-50%);
+	flex-direction: row;
+}
+#search .search-profile p.selected {
+	border-bottom: 1px solid black;
+}
+#search .search-profile p > * {
+	display: inline-block;
+	padding-left: 5px;
+}
+#search .search-profile p {
+	display: inline-block;
+	line-height: 40px;
+	color: black;
+	letter-spacing: 1px;
+	flex: 1;
+	font-size: 12px;
+	text-align: center;
+	text-decoration: none;
+}
+#search .search-result-css {
+/*	max-height: calc(100% - 40px);*/
+	width: 100%;
+	flex-direction: row;
+	flex-wrap: wrap;
+	display: flex;
+	justify-content: space-evenly;
+}
+#search .search-result-video {
+	display: none;
+}
+#search .search-result-video .single-video {
+	width: 130px;
+	cursor: pointer;
+/*	margin-left: 10px;*/
+	margin-top: 5px;
+	height: 200px;
+	background: black;
+	border-radius: 5px;
+}
+#search .search-result-video .single-video p {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	color: white;
+	box-shadow: 2px 2px 25px black;
+	z-index: 99;
+}
+#search .search-result-video .single-video:first-child {
+/*	margin-left: 0px;*/
+}
+#search .search-result-video .single-video > img {
+	max-width: 99%;
+	max-height: 99%;
+	top: 50%;
+/*	border-radius: inherit;*/
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+#search .search-result-user {
+	display: none;
+}
+#search .search-result-user .single-user,#search .search-result-hashtag .single-hashtag {
+	width: 100%;
+	cursor: pointer;
+	height: 50px;
+	background: #f7f7f7;/*
+	box-shadow: 0px -1px 17px 0px rgba(0,0,0,0.20);
+		-webkit-box-shadow: 0px -1px 17px 0px rgba(0,0,0,0.20);
+		-moz-box-shadow: 0px -1px 17px 0px rgba(0,0,0,0.20);*/
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+#search .search-result-user .single-user > *,#search .search-result-hashtag .single-hashtag > * {
+	display: inline-block;
+	float: left;
+}
+#search .search-result-user .single-user > img,#search .search-result-hashtag .single-hashtag > i {
+	height: 35px;
+	top: 50%;
+	margin-left: 10px;
+	transform: translateY(-50%);
+	margin-right: 10px;
+	width: 35px;
+	border-radius: 50%;
+}
+#search .search-result-user .single-user > p,#search .search-result-hashtag .single-hashtag > p {
+	font-weight: bold;
+	top: 50%;
+	font-size: 14px;
+	transform: translateY(-50%);
+}
+#search .search-result-hashtag  {
+	display: none;
+}
+#search .search-result-hashtag .single-hashtag > i {
+	background: black;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	font-style: normal;
+	color: white;
+	font-weight: bold;
+}
+#search .search-result-hashtag .single-hashtag > p {
+	font-style: italic;
+}

@@ -1,0 +1,124 @@
+#commentsBox  > p.header {
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-weight: bold;
+	font-size: 14px;
+	border-bottom: 1px solid #00000024;
+}
+#commentsBox {
+	width: 400px;
+	height: 500px;
+	border-radius: 5px;
+	background-color: white;
+	left: 50%;
+	top: 50%;
+	position: absolute;
+	transform: translate(-50%,-50%);
+	z-index: 110;
+	display: none;
+}
+#commentsBox .commentsClose {
+	color: white;
+	background-color: black;
+	height: 25px;
+	width: 25px;
+	border-radius: 50%;
+	text-align: center;
+	position: absolute;
+	cursor: pointer;
+	border: none;
+	font-size: 17px;
+	font-weight: bold;
+	right: 10px;
+	top: 6px;
+}
+#commentsBox .comments-list {
+	height: 400px;
+	width: 100%;
+	overflow: auto;
+}
+#commentsBox .comments-list .single-comment {
+	width: 100%;
+	position: relative;
+	display: block;
+	padding-bottom: 10px;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #e6e6e6;
+}
+#commentsBox .comments-list .single-comment .single-comment-header {
+	width: 100%;
+	height: 40px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header * {
+	display: inline-block;
+	float: left;
+}
+#commentsBox .comments-list .single-comment .single-comment-header img {
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background-color: black;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-left: 5px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header b {
+	height: 100%;
+	line-height: 40px;
+	margin-left: 10px;
+	font-size: 14px;
+}
+#commentsBox .comments-list .single-comment .single-comment-header p {
+	height: 100%;
+	line-height: 40px;
+	margin-left: 10px;
+	color: #979595;
+	font-size: 15px;
+}
+#commentsBox .comments-list .single-comment .single-comment-body .comment-text {
+	width: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 15px;
+	color: #606060;
+	margin: 5px 0px;
+}
+#commentsBox .write-comment {
+	width: 100%;
+	height: 50px;
+	background-color: white;
+	position: absolute;
+	bottom: 0;
+}
+#commentsBox .write-comment form {
+	width: 90%;
+	height: 60%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+#commentsBox .write-comment form > * {
+	display: inline-block;
+}
+#commentsBox .write-comment form input[type="text"] {
+
+}
+#commentsBox .write-comment form input[type="submit"] {
+	background-color: blue;
+	color: white;
+	width: 18%;
+	cursor: pointer;
+	border-color: white;
+}
+#commentsBox .write-comment form input {
+	width: 80%;
+	display: inline-block;
+	height: 100%;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	padding: 0px 10px;
+	font-size: 15px;
+	font-weight: bold;
+}
